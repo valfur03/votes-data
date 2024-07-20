@@ -29,3 +29,24 @@ body {
     @apply text-3xl font-semibold tracking-tight;
   }
 }
+
+@layer utilities {
+  .pt-safe {
+    padding-top: env(safe-area-inset-top);
+  }
+  .pr-safe {
+    padding-right: env(safe-area-inset-right);
+  }
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .pl-safe {
+    padding-left: env(safe-area-inset-left);
+  }
+  .px-safe {
+    @apply pl-safe pr-safe;
+  }
+  .py-safe {
+    @apply pl-safe pr-safe;
+  }
+}

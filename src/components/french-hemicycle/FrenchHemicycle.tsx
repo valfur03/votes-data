@@ -10,13 +10,15 @@ import { circlePositionToSeat } from "@/components/french-hemicycle/shared/utils
 import { repelSeat } from "@/components/french-hemicycle/shared/utils/repel-seat";
 import { withSurroundingSeats } from "@/components/french-hemicycle/shared/utils/with-surrounding-seats";
 import { cn } from "@/lib/utils/cn";
+import { Term } from "@/types/term";
 import { useMemo, useState } from "react";
 
 export type FrenchHemicycleProps = {
   className?: string;
+  term: Term;
 };
 
-export const FrenchHemicycle = ({ className }: FrenchHemicycleProps) => {
+export const FrenchHemicycle = ({ className, term }: FrenchHemicycleProps) => {
   const initialSeatPositions = useMemo(
     () => withSurroundingSeats(circlePositionToSeat(seatCirclePositions)),
     [],
@@ -65,6 +67,7 @@ export const FrenchHemicycle = ({ className }: FrenchHemicycleProps) => {
           return (
             <HemicycleSeat
               seat={seat}
+              fill={term.mandates[index]?.group.color}
               onMouseEnter={handleSeatHover(index, seat.surroundingSeatsIndex)}
               onMouseLeave={resetInitialSeatPositions()}
               onTouchStart={onTouchStart(

@@ -72,7 +72,7 @@ export const FrenchHemicycle = ({ className, term }: FrenchHemicycleProps) => {
           return (
             <HemicycleSeat
               seat={seat}
-              fill={term.mandates[index]?.group.color}
+              fill={seat.mandate.group.color}
               onMouseEnter={handleSeatHover(index, seat.surroundingSeatsIndex)}
               onMouseLeave={resetInitialSeatPositions()}
               onTouchStart={onTouchStart(

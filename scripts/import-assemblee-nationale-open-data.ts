@@ -26,106 +26,113 @@ import { generateUniqueId } from "./shared/utils/generate-unique-id";
 import { transformFromFilesInDir } from "./shared/utils/transform-from-files-in-dir";
 import { writeFileFromTemplatedEntity } from "./shared/utils/write-file-from-templated-entity";
 
-console.log("Creating groups");
-const groupFiles = fs.readdirSync(GROUPS_INPUT_DIRECTORY);
-const newGroups = transformFromFilesInDir(
-  GROUPS_INPUT_DIRECTORY,
-  groupFiles,
-  groupSchema,
-);
-writeFileFromTemplatedEntity(GROUPS_OUTPUT_DIRECTORY, newGroups, groupTemplate);
-
-console.log("Creating politicians");
-const politicianFiles = fs.readdirSync(POLITICIANS_INPUT_DIRECTORY);
-const newPoliticians = transformFromFilesInDir(
-  POLITICIANS_INPUT_DIRECTORY,
-  politicianFiles,
-  politicianSchema,
-);
-writeFileFromTemplatedEntity(
-  POLITICIANS_OUTPUT_DIRECTORY,
-  newPoliticians,
-  politicianTemplate,
-);
-
-console.log("Creating districts");
-const newDistricts = newPoliticians.map((politician) => {
-  const id = generateUniqueId();
-  return {
-    id,
-    number: politician._source_district_number,
-    departmentName: politician._source_district_department_name,
-    _source_id: politician._source_district_id,
-    _source_politician_id: politician._source_id,
-  };
-});
-writeFileFromTemplatedEntity(
-  DISTRICTS_OUTPUT_DIRECTORY,
-  newDistricts,
-  districtTemplate,
-);
-
-console.log("Creating mandates");
-const newMandates = newPoliticians.map((politician) => {
-  const id = generateUniqueId();
-  const district = newDistricts.find(
-    (district) => district._source_politician_id === politician._source_id,
+const main = async () => {
+  console.log("Creating groups");
+  const groupFiles = fs.readdirSync(GROUPS_INPUT_DIRECTORY);
+  const newGroups = transformFromFilesInDir(
+    GROUPS_INPUT_DIRECTORY,
+    groupFiles,
+    groupSchema,
   );
-  const group = newGroups.find(
-    (group) => group._source_id === politician._source_group_id,
+  writeFileFromTemplatedEntity(
+    GROUPS_OUTPUT_DIRECTORY,
+    newGroups,
+    groupTemplate,
   );
-  if (group === undefined) {
-    throw new Error(
-      `parsing error: politician '${politician._source_id}' has not matching group '${politician._source_group_id}`,
+
+  console.log("Creating politicians");
+  const politicianFiles = fs.readdirSync(POLITICIANS_INPUT_DIRECTORY);
+  const newPoliticians = transformFromFilesInDir(
+    POLITICIANS_INPUT_DIRECTORY,
+    politicianFiles,
+    politicianSchema,
+  );
+  writeFileFromTemplatedEntity(
+    POLITICIANS_OUTPUT_DIRECTORY,
+    newPoliticians,
+    politicianTemplate,
+  );
+
+  console.log("Creating districts");
+  const newDistricts = newPoliticians.map((politician) => {
+    const id = generateUniqueId();
+    return {
+      id,
+      number: politician._source_district_number,
+      departmentName: politician._source_district_department_name,
+      _source_id: politician._source_district_id,
+      _source_politician_id: politician._source_id,
+    };
+  });
+  writeFileFromTemplatedEntity(
+    DISTRICTS_OUTPUT_DIRECTORY,
+    newDistricts,
+    districtTemplate,
+  );
+
+  console.log("Creating mandates");
+  const newMandates = newPoliticians.map((politician) => {
+    const id = generateUniqueId();
+    const district = newDistricts.find(
+      (district) => district._source_politician_id === politician._source_id,
     );
-  }
-  if (district === undefined) {
-    throw new Error(
-      `parsing error: district '${politician._source_id}' has not matching district`,
+    const group = newGroups.find(
+      (group) => group._source_id === politician._source_group_id,
     );
+    if (group === undefined) {
+      throw new Error(
+        `parsing error: politician '${politician._source_id}' has not matching group '${politician._source_group_id}`,
+      );
+    }
+    if (district === undefined) {
+      throw new Error(
+        `parsing error: district '${politician._source_id}' has not matching district`,
+      );
+    }
+
+    return {
+      id,
+      politicianId: politician.id,
+      seatNumber: politician._source_seat_number,
+      districtId: district.id,
+      groupId: group.id,
+      _source_id: politician._source_mandate_id,
+    };
+  });
+  writeFileFromTemplatedEntity(
+    MANDATES_OUTPUT_DIRECTORY,
+    newMandates,
+    mandateTemplate,
+  );
+
+  if (newPoliticians.length === 0) {
+    throw new Error("parsing error: expecting at least one politician");
   }
 
-  return {
-    id,
-    politicianId: politician.id,
-    seatNumber: politician._source_seat_number,
-    districtId: district.id,
-    groupId: group.id,
-    _source_id: politician._source_mandate_id,
+  console.log("Creating latest term");
+  const newTerm = {
+    id: generateUniqueId(),
+    number: newPoliticians[0]._source_nth_term,
+    mandates: newMandates.sort((mandate1, mandate2) =>
+      mandate1.seatNumber.localeCompare(mandate2.seatNumber),
+    ),
+    _source_id: newPoliticians[0]._source_nth_term,
   };
-});
-writeFileFromTemplatedEntity(
-  MANDATES_OUTPUT_DIRECTORY,
-  newMandates,
-  mandateTemplate,
-);
+  writeFileFromTemplatedEntity(TERMS_OUTPUT_DIRECTORY, [newTerm], termTemplate);
 
-if (newPoliticians.length === 0) {
-  throw new Error("parsing error: expecting at least one politician");
-}
+  console.log("Downloading politicians images");
 
-console.log("Creating latest term");
-const newTerm = {
-  id: generateUniqueId(),
-  number: newPoliticians[0]._source_nth_term,
-  mandates: newMandates.sort((mandate1, mandate2) =>
-    mandate1.seatNumber.localeCompare(mandate2.seatNumber),
-  ),
-  _source_id: newPoliticians[0]._source_nth_term,
+  const politiciansImagesUrlAndNames = newPoliticians.map(
+    ({ id, _source_id }) => ({
+      url: generateDeputyImageUrl(newTerm.number, _source_id),
+      name: `${id}.${POLITICIANS_IMAGES_EXTENSION}`,
+    }),
+  );
+
+  downloadUrlsInDirectory(
+    politiciansImagesUrlAndNames,
+    POLITICIANS_IMAGES_OUTPUT_DIRECTORY,
+  );
 };
-writeFileFromTemplatedEntity(TERMS_OUTPUT_DIRECTORY, [newTerm], termTemplate);
 
-// TODO better logs
-console.log("Downloading politicians images");
-
-const politiciansImagesUrlAndNames = newPoliticians.map(
-  ({ id, _source_id }) => ({
-    url: generateDeputyImageUrl(newTerm.number, _source_id),
-    name: `${id}.${POLITICIANS_IMAGES_EXTENSION}`,
-  }),
-);
-
-downloadUrlsInDirectory(
-  politiciansImagesUrlAndNames,
-  POLITICIANS_IMAGES_OUTPUT_DIRECTORY,
-);
+main();

@@ -3,6 +3,7 @@
 import { POLITICIANS_IMAGES_EXTENSION } from "@/constant/images";
 import * as fs from "node:fs";
 
+import { SourceIndex } from "./shared/classes/source-index";
 import {
   POLITICIANS_INPUT_DIRECTORY,
   POLITICIANS_OUTPUT_DIRECTORY,
@@ -27,12 +28,15 @@ import { transformFromFilesInDir } from "./shared/utils/transform-from-files-in-
 import { writeFileFromTemplatedEntity } from "./shared/utils/write-file-from-templated-entity";
 
 const main = async () => {
+  const sourceIndex = new SourceIndex();
+  await sourceIndex.openFile(".source-index");
+
   console.log("Creating groups");
   const groupFiles = fs.readdirSync(GROUPS_INPUT_DIRECTORY);
   const newGroups = transformFromFilesInDir(
     GROUPS_INPUT_DIRECTORY,
     groupFiles,
-    groupSchema,
+    groupSchema(sourceIndex),
   );
   writeFileFromTemplatedEntity(
     GROUPS_OUTPUT_DIRECTORY,
@@ -45,7 +49,7 @@ const main = async () => {
   const newPoliticians = transformFromFilesInDir(
     POLITICIANS_INPUT_DIRECTORY,
     politicianFiles,
-    politicianSchema,
+    politicianSchema(sourceIndex),
   );
   writeFileFromTemplatedEntity(
     POLITICIANS_OUTPUT_DIRECTORY,
@@ -55,12 +59,13 @@ const main = async () => {
 
   console.log("Creating districts");
   const newDistricts = newPoliticians.map((politician) => {
-    const id = generateUniqueId();
+    const _source_id = politician._source_district_id;
+    const id = generateUniqueId(sourceIndex, _source_id);
     return {
       id,
       number: politician._source_district_number,
       departmentName: politician._source_district_department_name,
-      _source_id: politician._source_district_id,
+      _source_id,
       _source_politician_id: politician._source_id,
     };
   });
@@ -72,7 +77,8 @@ const main = async () => {
 
   console.log("Creating mandates");
   const newMandates = newPoliticians.map((politician) => {
-    const id = generateUniqueId();
+    const _source_id = politician._source_mandate_id;
+    const id = generateUniqueId(sourceIndex, _source_id);
     const district = newDistricts.find(
       (district) => district._source_politician_id === politician._source_id,
     );
@@ -96,7 +102,7 @@ const main = async () => {
       seatNumber: politician._source_seat_number,
       districtId: district.id,
       groupId: group.id,
-      _source_id: politician._source_mandate_id,
+      _source_id,
     };
   });
   writeFileFromTemplatedEntity(
@@ -110,13 +116,15 @@ const main = async () => {
   }
 
   console.log("Creating latest term");
+  const newTermSourceId = newPoliticians[0]._source_nth_term;
+  const newTermId = generateUniqueId(sourceIndex, newTermSourceId);
   const newTerm = {
-    id: generateUniqueId(),
+    id: newTermId,
     number: newPoliticians[0]._source_nth_term,
     mandates: newMandates.sort((mandate1, mandate2) =>
       mandate1.seatNumber.localeCompare(mandate2.seatNumber),
     ),
-    _source_id: newPoliticians[0]._source_nth_term,
+    _source_id: newTermSourceId,
   };
   writeFileFromTemplatedEntity(TERMS_OUTPUT_DIRECTORY, [newTerm], termTemplate);
 
@@ -133,6 +141,8 @@ const main = async () => {
     politiciansImagesUrlAndNames,
     POLITICIANS_IMAGES_OUTPUT_DIRECTORY,
   );
+
+  sourceIndex.closeFile();
 };
 
 main();

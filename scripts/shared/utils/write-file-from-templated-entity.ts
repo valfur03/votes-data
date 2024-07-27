@@ -3,7 +3,7 @@ import fs from "node:fs";
 
 export const writeFileFromTemplatedEntity = (
   outputDirectory: string,
-  entities: Array<Entity<unknown>>,
+  entities: Array<Entity<unknown> & { _source_id: string }>,
   entityTemplate: HandlebarsTemplateDelegate,
 ) => {
   entities.forEach((entity) => {

@@ -9,6 +9,7 @@ import { useTouchTwiceAsClick } from "@/components/french-hemicycle/shared/hooks
 import { circlePositionToSeat } from "@/components/french-hemicycle/shared/utils/circle-position-to-seat";
 import { repelSeat } from "@/components/french-hemicycle/shared/utils/repel-seat";
 import { withSurroundingSeats } from "@/components/french-hemicycle/shared/utils/with-surrounding-seats";
+import { withTermMandates } from "@/components/french-hemicycle/shared/utils/with-term-mandates";
 import { cn } from "@/lib/utils/cn";
 import { Term } from "@/types/term";
 import { useMemo, useState } from "react";
@@ -20,8 +21,12 @@ export type FrenchHemicycleProps = {
 
 export const FrenchHemicycle = ({ className, term }: FrenchHemicycleProps) => {
   const initialSeatPositions = useMemo(
-    () => withSurroundingSeats(circlePositionToSeat(seatCirclePositions)),
-    [],
+    () =>
+      withTermMandates(
+        withSurroundingSeats(circlePositionToSeat(seatCirclePositions)),
+        term.mandates,
+      ),
+    [term.mandates],
   );
   const [seatPositions, setSeatPositions] = useState(initialSeatPositions);
 

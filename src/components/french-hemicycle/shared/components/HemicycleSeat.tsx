@@ -3,6 +3,7 @@ import { MouseEventHandler, TouchEventHandler } from "react";
 
 export type HemicycleSeatProps = {
   seat: Seat;
+  fill?: string;
   onMouseEnter?: MouseEventHandler;
   onMouseLeave?: MouseEventHandler;
   onTouchStart?: TouchEventHandler;
@@ -11,6 +12,7 @@ export type HemicycleSeatProps = {
 
 export const HemicycleSeat = ({
   seat,
+  fill = "#9e9e9e",
   onMouseEnter,
   onMouseLeave,
   onTouchStart,
@@ -28,6 +30,7 @@ export const HemicycleSeat = ({
       cx={seat.circle.cx}
       cy={seat.circle.cy}
       r={seat.circle.r}
+      fill={fill}
       className="transition-all"
     />
   );

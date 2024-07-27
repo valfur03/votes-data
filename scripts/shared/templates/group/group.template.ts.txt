@@ -1,0 +1,8 @@
+import { Group } from "@/types/group";
+
+export const GROUP_{{entity.id}}: Group = {
+  id: "{{entity.id}}",
+  name: "{{{entity.name}}}",
+  shortName: "{{{entity.shortName}}}",
+  color: "{{entity.color}}",
+};

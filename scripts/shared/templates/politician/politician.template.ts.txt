@@ -1,0 +1,7 @@
+import { Politician } from "@/types/politician";
+
+export const POLITICIAN_{{entity.id}}: Politician = {
+  id: "{{entity.id}}",
+  firstName: "{{{entity.firstName}}}",
+  lastName: "{{{entity.lastName}}}",
+};

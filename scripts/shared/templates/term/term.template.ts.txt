@@ -1,0 +1,13 @@
+{{#each entity.mandates}}
+import { MANDATE_{{this.id}} } from "@/data/legislatives/mandate/{{this.id}}";
+{{/each}}
+import { Term } from "@/types/term";
+
+export const TERM_{{entity.id}}: Term = {
+  id: "{{entity.id}}",
+  mandates: [
+    {{#each entity.mandates}}
+    MANDATE_{{this.id}},
+    {{/each}}
+  ],
+};

@@ -1,0 +1,7 @@
+import { District } from "@/types/district";
+
+export const DISTRICT_{{entity.id}}: District = {
+  id: "{{entity.id}}",
+  number: "{{entity.number}}",
+  departmentName: "{{{entity.departmentName}}}",
+};

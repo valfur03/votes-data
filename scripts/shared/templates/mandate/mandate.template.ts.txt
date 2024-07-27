@@ -1,0 +1,13 @@
+import { DISTRICT_{{entity.districtId}} } from "@/data/legislatives/district/{{entity.districtId}}";
+import { GROUP_{{entity.groupId}} } from "@/data/legislatives/group/{{entity.groupId}}";
+import { POLITICIAN_{{entity.politicianId}} } from "@/data/politician/{{entity.politicianId}}";
+import { EMandateType, Mandate } from "@/types/mandate";
+
+export const MANDATE_{{entity.id}}: Mandate = {
+  id: "{{entity.id}}",
+  type: EMandateType.DEPUTY,
+  politician: POLITICIAN_{{entity.politicianId}},
+  seatNumber: "{{entity.seatNumber}}",
+  district: DISTRICT_{{entity.districtId}},
+  group: GROUP_{{entity.groupId}},
+};

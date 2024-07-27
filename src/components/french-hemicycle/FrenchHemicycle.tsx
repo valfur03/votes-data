@@ -80,7 +80,7 @@ export const FrenchHemicycle = ({ className, term }: FrenchHemicycleProps) => {
                 handleSeatHover(index, seat.surroundingSeatsIndex),
               )}
               onTouchEnd={onTouchEnd(index)}
-              key={index}
+              key={seat.mandate.id}
             />
           );
         })}

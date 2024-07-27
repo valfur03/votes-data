@@ -6,6 +6,9 @@ export const withTermMandates = (
   mandates: Array<Mandate>,
 ) => {
   return seats.map((seat, index) => {
+    if (mandates[index] === undefined) {
+      throw new Error("Current term does not contain enough mandates");
+    }
     return {
       ...seat,
       mandate: mandates[index],

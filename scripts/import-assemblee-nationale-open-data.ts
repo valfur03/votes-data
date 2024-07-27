@@ -1,5 +1,6 @@
 #!/usr/bin/env tsx
 
+import { POLITICIANS_IMAGES_EXTENSION } from "@/constant/images";
 import * as fs from "node:fs";
 
 import {
@@ -10,6 +11,7 @@ import {
   MANDATES_OUTPUT_DIRECTORY,
   DISTRICTS_OUTPUT_DIRECTORY,
   TERMS_OUTPUT_DIRECTORY,
+  POLITICIANS_IMAGES_OUTPUT_DIRECTORY,
 } from "./shared/config/directories";
 import { groupSchema } from "./shared/schemas/group.schema";
 import { politicianSchema } from "./shared/schemas/politician.schema";
@@ -18,6 +20,8 @@ import { groupTemplate } from "./shared/templates/group/group.template";
 import { mandateTemplate } from "./shared/templates/mandate/mandate.template";
 import { politicianTemplate } from "./shared/templates/politician/politician.template";
 import { termTemplate } from "./shared/templates/term/term.template";
+import { downloadUrlsInDirectory } from "./shared/utils/download-urls-in-directory";
+import { generateDeputyImageUrl } from "./shared/utils/generate-deputy-image-url";
 import { generateUniqueId } from "./shared/utils/generate-unique-id";
 import { transformFromFilesInDir } from "./shared/utils/transform-from-files-in-dir";
 import { writeFileFromTemplatedEntity } from "./shared/utils/write-file-from-templated-entity";
@@ -107,3 +111,18 @@ const newTerm = {
   ),
 };
 writeFileFromTemplatedEntity(TERMS_OUTPUT_DIRECTORY, [newTerm], termTemplate);
+
+// TODO better logs
+console.log("Downloading politicians images");
+
+const politiciansImagesUrlAndNames = newPoliticians.map(
+  ({ id, _source_id }) => ({
+    url: generateDeputyImageUrl(newTerm.number, _source_id),
+    name: `${id}.${POLITICIANS_IMAGES_EXTENSION}`,
+  }),
+);
+
+downloadUrlsInDirectory(
+  politiciansImagesUrlAndNames,
+  POLITICIANS_IMAGES_OUTPUT_DIRECTORY,
+);

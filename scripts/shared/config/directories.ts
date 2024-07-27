@@ -1,3 +1,5 @@
+import { IMAGES_BASE_PATH } from "@/constant/images";
+
 export const GROUPS_INPUT_DIRECTORY =
   process.env.GROUPS_OUTPUT_DIRECTORY ||
   "../public/deputes_actifs_mandats_actifs_organes/json/organe";
@@ -9,6 +11,9 @@ export const POLITICIANS_INPUT_DIRECTORY =
   "../public/deputes_actifs_mandats_actifs_organes/json/acteur";
 export const POLITICIANS_OUTPUT_DIRECTORY =
   process.env.POLITICIANS_OUTPUT_DIRECTORY || "../src/data/politician";
+export const POLITICIANS_IMAGES_OUTPUT_DIRECTORY =
+  process.env.POLITICIANS_IMAGES_DIRECTORY ||
+  `../public/${IMAGES_BASE_PATH}/politician`;
 
 export const MANDATES_OUTPUT_DIRECTORY =
   process.env.MANDATES_OUTPUT_DIRECTORY || "../src/data/legislatives/mandate";

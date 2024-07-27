@@ -1,4 +1,6 @@
+import { getPoliticianImagePath } from "@/lib/utils/get-politician-image-path";
 import { Mandate } from "@/types/mandate";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -14,7 +16,16 @@ export const DeputiesGridCell = ({ mandate }: DeputiesGridCellProps) => {
       className="group flex items-center gap-4 p-2 md:odd:flex-row md:even:flex-row-reverse"
       style={{ "--party-color": mandate.group.color } as React.CSSProperties}
     >
-      <div className="size-10 shrink-0 rounded-full bg-gray-300" />
+      <div className="shrink-0">
+        <Image
+          src={`/${getPoliticianImagePath(mandate.politician)}`}
+          alt={`Photo du/de la député·e ${mandate.politician.firstName} ${mandate.politician.lastName}`}
+          width={40}
+          height={40}
+          quality={100}
+          className="size-10 rounded-full"
+        />
+      </div>
       <div className="md:group-odd:text-left md:group-even:text-right">
         <p className="text-base leading-5">
           {mandate.politician.firstName} {mandate.politician.lastName}

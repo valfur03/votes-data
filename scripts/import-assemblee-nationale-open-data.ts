@@ -55,6 +55,7 @@ const newDistricts = newPoliticians.map((politician) => {
     id,
     number: politician._source_district_number,
     departmentName: politician._source_district_department_name,
+    _source_id: politician._source_district_id,
     _source_politician_id: politician._source_id,
   };
 });
@@ -90,6 +91,7 @@ const newMandates = newPoliticians.map((politician) => {
     seatNumber: politician._source_seat_number,
     districtId: district.id,
     groupId: group.id,
+    _source_id: politician._source_mandate_id,
   };
 });
 writeFileFromTemplatedEntity(
@@ -109,6 +111,7 @@ const newTerm = {
   mandates: newMandates.sort((mandate1, mandate2) =>
     mandate1.seatNumber.localeCompare(mandate2.seatNumber),
   ),
+  _source_id: newPoliticians[0]._source_nth_term,
 };
 writeFileFromTemplatedEntity(TERMS_OUTPUT_DIRECTORY, [newTerm], termTemplate);
 

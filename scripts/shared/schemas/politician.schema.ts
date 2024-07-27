@@ -24,6 +24,7 @@ export const politicianSchema = z
               }),
             }),
             z.object({
+              uid: z.string(),
               typeOrgane: z.literal("ASSEMBLEE"),
               legislature: z.string(),
               election: z.object({
@@ -31,6 +32,7 @@ export const politicianSchema = z
                   departement: z.string(),
                   numCirco: z.string(),
                 }),
+                refCirconscription: z.string(),
               }),
               mandature: z.object({
                 placeHemicycle: z.string(),
@@ -93,6 +95,8 @@ export const politicianSchema = z
       lastName: politician.acteur.etatCivil.ident.nom,
       _source_id: politician.acteur.uid["#text"],
       _source_group_id: sourceGroupId,
+      _source_mandate_id: sourceParliamentMandate.uid,
+      _source_district_id: sourceParliamentMandate.election.refCirconscription,
       _source_district_number: sourceParliamentMandate.election.lieu.numCirco,
       _source_district_department_name:
         sourceParliamentMandate.election.lieu.departement,

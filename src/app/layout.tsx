@@ -1,3 +1,4 @@
+import { Topbar } from "@/components/topbar/Topbar";
 import type { Metadata, Viewport } from "next";
 import { Overpass } from "next/font/google";
 
@@ -23,7 +24,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
-      <body className={overpass.className}>{children}</body>
+      <body className={overpass.className}>
+        <Topbar />
+        {children}
+      </body>
     </html>
   );
 }

@@ -581,5 +581,6 @@ export const seatCirclePositions: Array<CirclePosition> = [
   { cx: 10.3205, cy: 92.9936 },
   { cx: 9.50825, cy: 96.9184 },
   { cx: 8.85762, cy: 100.886 },
-  { cx: 118.3, cy: 132 },
+  // President seat
+  // { cx: 118.3, cy: 132 },
 ];

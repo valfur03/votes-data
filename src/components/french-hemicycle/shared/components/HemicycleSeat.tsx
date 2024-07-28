@@ -24,9 +24,6 @@ export const HemicycleSeat = ({
       onMouseLeave={onMouseLeave}
       onTouchStart={onTouchStart}
       onTouchEnd={onTouchEnd}
-      onClick={() => {
-        alert("hi");
-      }}
       cx={seat.circle.cx}
       cy={seat.circle.cy}
       r={seat.circle.r}

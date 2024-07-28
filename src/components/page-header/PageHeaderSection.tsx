@@ -11,9 +11,7 @@ export const PageHeaderSection = ({
 }: PageHeaderSectionProps) => {
   return (
     <section className="px-safe bg-white last:rounded-b-lg">
-      <div className={cn("m-auto max-w-screen-lg p-2 w-full", className)}>
-        {children}
-      </div>
+      <div className={cn("m-auto max-w-4xl", className)}>{children}</div>
     </section>
   );
 };

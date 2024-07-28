@@ -1,6 +1,7 @@
 "use client";
 
 import { HemicycleSeat } from "@/components/french-hemicycle/shared/components/HemicycleSeat";
+import { HemicycleSeatsImagePatterns } from "@/components/french-hemicycle/shared/components/HemicycleSeatsImagePatterns";
 import {
   hoveredSeatRadius,
   seatCirclePositions,
@@ -28,10 +29,12 @@ export const FrenchHemicycle = ({ className, term }: FrenchHemicycleProps) => {
       ),
     [term.mandates],
   );
+  const [hoveredSeatIndex, setHoveredSeatIndex] = useState<number | null>(null);
   const [seatPositions, setSeatPositions] = useState(initialSeatPositions);
 
   const handleSeatHover =
     (hoveredSeatIndex: number, surroundingSeatsIndex: Array<number>) => () => {
+      setHoveredSeatIndex(hoveredSeatIndex);
       setSeatPositions((currentSeatPositions) => {
         const newSeatPositions = [...initialSeatPositions];
         if (newSeatPositions[hoveredSeatIndex] === undefined) {
@@ -55,6 +58,7 @@ export const FrenchHemicycle = ({ className, term }: FrenchHemicycleProps) => {
     };
 
   const resetInitialSeatPositions = () => () => {
+    setHoveredSeatIndex(null);
     setSeatPositions(initialSeatPositions);
   };
 
@@ -67,12 +71,17 @@ export const FrenchHemicycle = ({ className, term }: FrenchHemicycleProps) => {
       xmlns="http://www.w3.org/2000/svg"
       className={cn(className)}
     >
+      <HemicycleSeatsImagePatterns mandates={seatPositions} />
       <g fill="#9E9E9E">
         {seatPositions.map((seat, index) => {
           return (
             <HemicycleSeat
               seat={seat}
-              fill={seat.mandate.group.color}
+              fill={
+                hoveredSeatIndex === index
+                  ? `url(#seat-${seat.mandate.seatNumber}-img)`
+                  : seat.mandate.group.color
+              }
               onMouseEnter={handleSeatHover(index, seat.surroundingSeatsIndex)}
               onMouseLeave={resetInitialSeatPositions()}
               onTouchStart={onTouchStart(

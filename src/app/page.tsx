@@ -9,18 +9,18 @@ export default function Home() {
   return (
     <>
       <PageHeader>
-        <PageHeaderSection className="flex px-24 py-8">
-          <div className="flex w-full justify-between bg-[url(/assets/image/other/home-graph-lines.png)] bg-[length:832px] bg-no-repeat px-8">
+        <PageHeaderSection className="flex p-8">
+          <div className="flex w-full justify-center bg-[length:832px] bg-no-repeat md:justify-between md:bg-[url(/assets/image/other/home-graph-lines.png)] md:px-8">
             <div className="flex flex-col gap-y-4">
-              <HomeHeadline />
-              <div className="flex gap-x-3">
+              <HomeHeadline className="text-center md:text-left" />
+              <div className="flex justify-center gap-x-3 md:justify-start">
                 <Button>Découvrir</Button>
                 <Button variant="primary-discret">
                   <MagnifyingGlassIcon /> Rechercher une donnée...
                 </Button>
               </div>
             </div>
-            <HomeFrenchGraph />
+            <HomeFrenchGraph className="hidden md:flex" />
           </div>
         </PageHeaderSection>
       </PageHeader>

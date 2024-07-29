@@ -1,17 +1,22 @@
+import {
+  PageContentSection,
+  PageContentSectionProps,
+} from "@/components/page-content/PageContentSection";
 import { cn } from "@/lib/utils/cn";
-import { PropsWithChildren } from "react";
 
-export type PageHeaderSectionProps = PropsWithChildren<{
-  className?: string;
-}>;
+export type PageHeaderSectionProps = PageContentSectionProps;
 
 export const PageHeaderSection = ({
   children,
   className,
+  sectionClassName,
 }: PageHeaderSectionProps) => {
   return (
-    <section className="px-safe bg-white last:rounded-b-lg">
-      <div className={cn("m-auto max-w-4xl", className)}>{children}</div>
-    </section>
+    <PageContentSection
+      sectionClassName={cn("bg-white last:rounded-b-lg", sectionClassName)}
+      className={cn("max-w-4xl", className)}
+    >
+      {children}
+    </PageContentSection>
   );
 };

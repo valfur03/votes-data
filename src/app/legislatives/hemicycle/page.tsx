@@ -4,7 +4,7 @@ import { PageHeader } from "@/components/page-header/PageHeader";
 import { PageHeaderSection } from "@/components/page-header/PageHeaderSection";
 import { TERM_0b5c63073d424f4c90cccc17ea29c4dd } from "@/data/legislatives/term/0b5c63073d424f4c90cccc17ea29c4dd";
 
-export default function LegislativesPage() {
+export default function LegislativesHemicyclePage() {
   return (
     <main>
       <PageHeader>

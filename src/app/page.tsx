@@ -28,7 +28,7 @@ export default function Home() {
         </PageHeaderSection>
       </PageHeader>
       <PageContent>
-        <PageContentSection className="grid w-fit grid-cols-[repeat(2,448px)] gap-8 p-8">
+        <PageContentSection className="grid w-fit grid-cols-1 gap-8 p-8 lg:grid-cols-[repeat(2,448px)]">
           <LegislativesElectionCard />
         </PageContentSection>
       </PageContent>

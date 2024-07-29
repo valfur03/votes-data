@@ -30,6 +30,12 @@ body {
   }
 }
 
+@layer components {
+  .bg-election-card-legislatives {
+    @apply bg-white bg-national-assembly-blue;
+  }
+}
+
 @layer utilities {
   .pt-safe {
     padding-top: env(safe-area-inset-top);

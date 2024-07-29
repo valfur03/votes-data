@@ -12,7 +12,7 @@ import Link from "next/link";
 export const LegislativesElectionCard = () => {
   return (
     <Link href={LEGISLATIVES_PATH}>
-      <ElectionCard className="bg-election-card-legislatives">
+      <ElectionCard className="bg-election-card-legislatives max-w-xl">
         <div className="max-w-[75%]">
           <ElectionCardHeader>
             <ElectionCardTitle>Élections législatives</ElectionCardTitle>

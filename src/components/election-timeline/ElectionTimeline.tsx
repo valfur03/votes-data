@@ -16,7 +16,7 @@ export const ElectionTimeline = () => {
           <div className="size-6 shrink-0 rounded-full bg-indigo-100"></div>
         </div>
         <div className="flex w-full flex-row-reverse items-center justify-end gap-2 text-center sm:max-w-48 sm:flex-col">
-          <Card className="gap-2">
+          <Card className="h-[114px] gap-2">
             <CardHeader className="pb-0">
               <CardTitle className="whitespace-pre-line text-base font-semibold text-neutral-800">
                 30 juin & {"\n"}

@@ -32,7 +32,7 @@ export const ElectionTimeline = () => {
           </div>
         </div>
       </div>
-      <div className="absolute bottom-0 left-[10px] h-[calc(100%-1rem-114px/2)] w-2 rounded-full bg-gradient-to-t from-transparent via-indigo-100 via-[24px] to-blue-france to-[calc(100%-24px)] sm:bottom-[12px] sm:top-[revert] sm:h-2 sm:w-[calc(100%-3rem-12rem/2)] sm:bg-gradient-to-r sm:via-[72px] sm:to-[calc(100%-72px)]"></div>
+      <div className="absolute bottom-0 left-[10px] h-[calc(100%-1rem-114px/2)] w-2 rounded-full bg-gradient-to-t from-transparent via-indigo-100 via-[24px] to-blue-france to-[calc(100%-24px)] sm:bottom-[12px] sm:top-[revert] sm:h-2 sm:w-[calc(100%-3rem-12rem/2)] sm:bg-gradient-to-r sm:via-[72px] sm:to-[calc(100%-72px)]" />
     </div>
   );
 };

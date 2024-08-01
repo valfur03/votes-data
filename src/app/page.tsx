@@ -3,7 +3,7 @@ import { LegislativesElectionCard } from "@/components/election-card/Legislative
 import { HomeFrenchGraph } from "@/components/home-french-graph/HomeFrenchGraph";
 import { HomeHeadline } from "@/components/home-headline/HomeHeadline";
 import { PageContent } from "@/components/page-content/PageContent";
-import { PageContentSection } from "@/components/page-content/PageContentSection";
+import { PageContentCardsGridSection } from "@/components/page-content/PageContentCardsGridSection";
 import { PageHeader } from "@/components/page-header/PageHeader";
 import { PageHeaderSection } from "@/components/page-header/PageHeaderSection";
 import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
@@ -28,9 +28,9 @@ export default function Home() {
         </PageHeaderSection>
       </PageHeader>
       <PageContent>
-        <PageContentSection className="grid w-fit grid-cols-1 gap-8 p-8 lg:grid-cols-[repeat(2,448px)]">
+        <PageContentCardsGridSection className="grid w-fit grid-cols-1 gap-8 p-8 lg:grid-cols-[repeat(2,448px)]">
           <LegislativesElectionCard />
-        </PageContentSection>
+        </PageContentCardsGridSection>
       </PageContent>
     </>
   );

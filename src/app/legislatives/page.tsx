@@ -6,6 +6,7 @@ import {
   DatavizCardTitle,
 } from "@/components/dataviz-card/DatavizCard";
 import { PageContent } from "@/components/page-content/PageContent";
+import { PageContentCardsGridSection } from "@/components/page-content/PageContentCardsGridSection";
 import { PageContentSection } from "@/components/page-content/PageContentSection";
 import { PageHeader } from "@/components/page-header/PageHeader";
 import { PageHeaderSection } from "@/components/page-header/PageHeaderSection";
@@ -19,7 +20,7 @@ export default function LegislativesPage() {
         <PageHeaderSection className="flex p-8"></PageHeaderSection>
       </PageHeader>
       <PageContent>
-        <PageContentSection className="grid w-fit grid-cols-1 gap-8 p-8 lg:grid-cols-[repeat(2,448px)]">
+        <PageContentCardsGridSection>
           <Link href="/legislatives/hemicycle">
             <DatavizCard>
               <DatavizCardHeader>
@@ -38,7 +39,7 @@ export default function LegislativesPage() {
               </DatavizCardFooter>
             </DatavizCard>
           </Link>
-        </PageContentSection>
+        </PageContentCardsGridSection>
       </PageContent>
     </>
   );

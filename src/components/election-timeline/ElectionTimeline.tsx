@@ -7,7 +7,7 @@ import {
 
 export const ElectionTimeline = () => {
   return (
-    <div className="relative w-[calc(50%+48px+190px/2)]">
+    <div className="relative w-[calc(50%+3rem+12rem/2)]">
       <div className="relative z-10 flex items-end justify-between px-12">
         <div className="mb-1 flex w-full max-w-14 flex-col items-center gap-1 text-center">
           <div className="w-full">
@@ -32,7 +32,7 @@ export const ElectionTimeline = () => {
           </div>
         </div>
       </div>
-      <div className="absolute bottom-[12px] h-2 w-[calc(100%-48px-190px/2)] rounded-full bg-gradient-to-r from-transparent via-indigo-100 via-[72px] to-blue-france to-[calc(100%-72px)]"></div>
+      <div className="absolute bottom-[12px] h-2 w-[calc(100%-3rem-12rem/2)] rounded-full bg-gradient-to-r from-transparent via-indigo-100 via-[72px] to-blue-france to-[calc(100%-72px)]"></div>
     </div>
   );
 };

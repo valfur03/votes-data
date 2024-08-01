@@ -1,3 +1,10 @@
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "@/components/card/Card";
+
 export const ElectionTimeline = () => {
   return (
     <div className="relative w-[calc(50%+48px+190px/2)]">
@@ -9,13 +16,17 @@ export const ElectionTimeline = () => {
           <div className="size-6 rounded-full bg-indigo-100"></div>
         </div>
         <div className="flex w-full max-w-48 flex-col items-center justify-between gap-2 text-center">
-          <div className="flex h-32 w-full flex-col justify-center gap-2 rounded border border-neutral-300 [&_p]:mb-0">
-            <p className="mb-1 whitespace-pre-line text-base font-semibold text-neutral-800">
-              30 juin & {"\n"}
-              07 juillet 2024
-            </p>
-            <p>... dans 678 jours</p>
-          </div>
+          <Card className="gap-2">
+            <CardHeader className="pb-0">
+              <CardTitle className="whitespace-pre-line text-base font-semibold text-neutral-800">
+                30 juin & {"\n"}
+                07 juillet 2024
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p>... dans 678 jours</p>
+            </CardContent>
+          </Card>
           <div className="size-6 rounded-full bg-blue-france"></div>
         </div>
       </div>

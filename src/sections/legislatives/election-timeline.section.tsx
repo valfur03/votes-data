@@ -3,7 +3,7 @@ import { PageHeaderSection } from "@/components/page-header/PageHeaderSection";
 
 export const ElectionTimelineSection = () => {
   return (
-    <PageHeaderSection className="flex p-8">
+    <PageHeaderSection className="flex justify-center p-8 sm:justify-start">
       <ElectionTimeline />
     </PageHeaderSection>
   );

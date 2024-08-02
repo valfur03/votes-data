@@ -13,7 +13,7 @@ export const ElectionTimeline = () => {
           <div className="w-full">
             <p className="text-xs text-neutral-700">12 & 19 juin 2022</p>
           </div>
-          <div className="size-[--election-timeline-spot-previous-size] shrink-0 rounded-full bg-indigo-100"></div>
+          <div className="size-[--election-timeline-spot-previous-size] shrink-0 rounded-full bg-indigo-100" />
         </div>
         <div className="flex w-full max-w-48 flex-col items-center gap-2 text-center">
           <Card className="w-[--election-timeline-card-next-width] gap-2">
@@ -28,7 +28,7 @@ export const ElectionTimeline = () => {
             </CardContent>
           </Card>
           <div className="box-border flex size-[--election-timeline-spot-next-outer-size] shrink-0 items-center justify-center rounded-full border-4 border-blue-france bg-white">
-            <div className="size-[--election-timeline-spot-next-inner-size] rounded-full bg-blue-france"></div>
+            <div className="size-[--election-timeline-spot-next-inner-size] rounded-full bg-blue-france" />
           </div>
         </div>
       </div>

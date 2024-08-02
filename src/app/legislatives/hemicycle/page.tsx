@@ -8,7 +8,7 @@ export default function LegislativesHemicyclePage() {
   return (
     <main>
       <PageHeader>
-        <PageHeaderSection className="m-auto max-w-screen-lg px-6 py-8">
+        <PageHeaderSection className="m-auto max-w-screen-lg p-6 pb-0">
           <h1>Composition de l&apos;hémicycle</h1>
         </PageHeaderSection>
         <PageHeaderSection className="m-auto max-w-screen-lg p-2">

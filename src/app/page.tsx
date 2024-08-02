@@ -11,7 +11,7 @@ import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
 export default function Home() {
   return (
     <>
-      <PageHeader>
+      <PageHeader hasReturnButton={false}>
         <PageHeaderSection className="flex p-8">
           <div className="flex w-full justify-center bg-[length:832px] bg-no-repeat md:justify-between md:bg-[url(/assets/image/other/home-graph-lines.png)] md:px-8">
             <div className="flex flex-col gap-y-4">

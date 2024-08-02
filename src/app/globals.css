@@ -31,6 +31,10 @@ body {
 }
 
 @layer components {
+  .page-header .before-return {
+    order: 0;
+  }
+
   .header-section {
     --header-section-max-width: 56rem;
     --header-section-padding-x: 2rem;

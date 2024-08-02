@@ -11,6 +11,7 @@ const buttonVariants = cva(
         default: "bg-blue-france text-white",
         "primary-discret":
           "border border-indigo-200 bg-indigo-100 text-indigo-950",
+        link: "text-blue-france underline-offset-4 hover:underline",
       },
       size: {
         default: "h-9 gap-x-2 px-4 py-2 text-sm",

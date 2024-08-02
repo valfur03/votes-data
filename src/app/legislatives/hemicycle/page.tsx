@@ -3,13 +3,14 @@ import { FrenchHemicycle } from "@/components/french-hemicycle/FrenchHemicycle";
 import { PageHeader } from "@/components/page-header/PageHeader";
 import { PageHeaderSection } from "@/components/page-header/PageHeaderSection";
 import { PageHeaderTitle } from "@/components/page-header/PageHeaderTitle";
+import { LEGISLATIVES_HEMICYCLE_PAGE_TITLE } from "@/constant/pages-title";
 import { TERM_0b5c63073d424f4c90cccc17ea29c4dd } from "@/data/legislatives/term/0b5c63073d424f4c90cccc17ea29c4dd";
 
 export default function LegislativesHemicyclePage() {
   return (
     <main>
       <PageHeader>
-        <PageHeaderTitle>Composition de l&apos;hémicycle</PageHeaderTitle>
+        <PageHeaderTitle>{LEGISLATIVES_HEMICYCLE_PAGE_TITLE}</PageHeaderTitle>
         <PageHeaderSection className="m-auto max-w-screen-lg p-2">
           <FrenchHemicycle term={TERM_0b5c63073d424f4c90cccc17ea29c4dd} />
         </PageHeaderSection>

@@ -9,7 +9,7 @@ export default function LegislativesHemicyclePage() {
     <main>
       <PageHeader>
         <PageHeaderSection className="m-auto max-w-screen-lg px-6 py-8">
-          <h1>Élections législatives</h1>
+          <h1>Composition de l&apos;hémicycle</h1>
         </PageHeaderSection>
         <PageHeaderSection className="m-auto max-w-screen-lg p-2">
           <FrenchHemicycle term={TERM_0b5c63073d424f4c90cccc17ea29c4dd} />

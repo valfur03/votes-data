@@ -28,6 +28,7 @@ export const HemicycleSeat = ({
       cy={seat.circle.cy}
       r={seat.circle.r}
       fill={fill}
+      className="transition-all"
     />
   );
 };

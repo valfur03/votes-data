@@ -31,6 +31,22 @@ body {
 }
 
 @layer components {
+  .header-section {
+    --header-section-max-width: 56rem;
+    --header-section-padding-x: 2rem;
+  }
+
+  .election-timeline {
+    --election-timeline-max-width: calc((var(--header-section-max-width) - var(--header-section-padding-x) * 2) / 2 + var(--election-timeline-sm-spots-padding-x) + var(--election-timeline-card-next-width) / 2);
+    --election-timeline-line-height: 0.5rem;
+    --election-timeline-xs-spots-padding-x: 1.5rem;
+    --election-timeline-sm-spots-padding-x: 3rem;
+    --election-timeline-spot-previous-size: 1.5rem;
+    --election-timeline-spot-next-inner-size: 1rem;
+    --election-timeline-spot-next-outer-size: 2rem;
+    --election-timeline-card-next-width: 12rem;
+  }
+
   .bg-election-card-legislatives {
     @apply bg-white bg-national-assembly-blue;
   }

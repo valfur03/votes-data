@@ -14,7 +14,10 @@ export const PageHeaderSection = ({
   return (
     <PageContentSection
       sectionClassName={cn("bg-white last:rounded-b-lg", sectionClassName)}
-      className={cn("max-w-4xl", className)}
+      className={cn(
+        "header-section max-w-[--header-section-max-width]",
+        className,
+      )}
     >
       {children}
     </PageContentSection>

@@ -2,18 +2,14 @@ import { DeputiesGrid } from "@/components/deputies-grid/DeputiesGrid";
 import { FrenchHemicycle } from "@/components/french-hemicycle/FrenchHemicycle";
 import { PageHeader } from "@/components/page-header/PageHeader";
 import { PageHeaderSection } from "@/components/page-header/PageHeaderSection";
+import { PageHeaderTitle } from "@/components/page-header/PageHeaderTitle";
 import { TERM_0b5c63073d424f4c90cccc17ea29c4dd } from "@/data/legislatives/term/0b5c63073d424f4c90cccc17ea29c4dd";
 
 export default function LegislativesHemicyclePage() {
   return (
     <main>
       <PageHeader>
-        <PageHeaderSection
-          beforeReturn={true}
-          className="m-auto max-w-screen-lg p-6 pb-0"
-        >
-          <h1>Composition de l&apos;hémicycle</h1>
-        </PageHeaderSection>
+        <PageHeaderTitle>Composition de l&apos;hémicycle</PageHeaderTitle>
         <PageHeaderSection className="m-auto max-w-screen-lg p-2">
           <FrenchHemicycle term={TERM_0b5c63073d424f4c90cccc17ea29c4dd} />
         </PageHeaderSection>

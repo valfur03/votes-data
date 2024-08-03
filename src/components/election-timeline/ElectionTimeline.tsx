@@ -4,14 +4,20 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/card/Card";
+import { prettifyElectionDate } from "@/components/election-timeline/shared/utils/prettify-election-date";
+import { LEGISLATIVES_ELECTIONS } from "@/data/legislatives/elections";
 
 export const ElectionTimeline = () => {
+  const [nextElection, previousElection] = LEGISLATIVES_ELECTIONS;
+
   return (
     <div className="election-timeline relative w-full max-w-[--election-timeline-max-width]">
       <div className="relative z-10 flex flex-row items-end justify-between pl-[calc(var(--election-timeline-xs-spots-padding-x)+env(safe-area-inset-left))] pr-[--election-timeline-xs-spots-padding-x] sm:px-[--election-timeline-sm-spots-padding-x]">
         <div className="mb-[calc((var(--election-timeline-spot-next-outer-size)-var(--election-timeline-spot-previous-size))/2)] flex w-full max-w-14 flex-col items-center gap-1 text-center">
           <div className="w-full">
-            <p className="text-xs text-neutral-700">12 & 19 juin 2022</p>
+            <p className="text-xs text-neutral-700">
+              {prettifyElectionDate(previousElection)}
+            </p>
           </div>
           <div className="size-[--election-timeline-spot-previous-size] shrink-0 rounded-full bg-indigo-100" />
         </div>
@@ -19,8 +25,7 @@ export const ElectionTimeline = () => {
           <Card className="w-[--election-timeline-card-next-width] gap-2">
             <CardHeader className="pb-0">
               <CardTitle className="whitespace-pre-line text-base font-semibold text-neutral-800">
-                30 juin & {"\n"}
-                07 juillet 2024
+                {prettifyElectionDate(nextElection)}
               </CardTitle>
             </CardHeader>
             <CardContent>

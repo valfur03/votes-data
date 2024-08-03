@@ -1,0 +1,2 @@
+export const LEGISLATIVES_HEMICYCLE_PIE_TAB = "pie";
+export const LEGISLATIVES_HEMICYCLE_SEATS_TAB = "seats";

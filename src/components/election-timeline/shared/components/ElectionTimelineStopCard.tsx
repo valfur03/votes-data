@@ -5,6 +5,7 @@ import {
   CardTitle,
 } from "@/components/card/Card";
 import { ElectionTimelineStopProps } from "@/components/election-timeline/shared/components/ElectionTimelineStop";
+import { getPrettyNumberOfTimeUnitUntilFirstRound } from "@/components/election-timeline/shared/utils/get-pretty-number-of-time-unit-until-first-round";
 import { prettifyElectionDate } from "@/components/election-timeline/shared/utils/prettify-election-date";
 
 export type ElectionTimelineStopCardProps = Pick<
@@ -18,6 +19,9 @@ export const ElectionTimelineStopCard = ({
 }: ElectionTimelineStopCardProps) => {
   const prettifiedElectionDate = prettifyElectionDate(election);
 
+  const timeUntilFirstRound =
+    getPrettyNumberOfTimeUnitUntilFirstRound(election);
+
   return time === "passed" ? (
     <p className="text-xs text-neutral-700">{prettifiedElectionDate}</p>
   ) : (
@@ -28,7 +32,7 @@ export const ElectionTimelineStopCard = ({
         </CardTitle>
       </CardHeader>
       <CardContent>
-        <p>... dans 678 jours</p>
+        <p>... dans {timeUntilFirstRound}</p>
       </CardContent>
     </Card>
   );

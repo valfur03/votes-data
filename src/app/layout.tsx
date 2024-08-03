@@ -1,14 +1,10 @@
+import { overpass } from "@/app/fonts/overpass/overpass";
 import { Topbar } from "@/components/topbar/Topbar";
 import dayjs from "dayjs";
 import "dayjs/locale/fr";
 import type { Metadata, Viewport } from "next";
-import { Overpass } from "next/font/google";
 
 import "./globals.css";
-
-const overpass = Overpass({
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Votes Data",

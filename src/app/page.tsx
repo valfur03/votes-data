@@ -1,5 +1,7 @@
 import { Button } from "@/components/button/Button";
 import { LegislativesElectionCard } from "@/components/election-card/LegislativesElectionCard";
+import { MunicipalesElectionCard } from "@/components/election-card/MunicipalesElectionCard";
+import { PresidentiellesElectionCard } from "@/components/election-card/PresidentiellesElectionCard";
 import { HomeFrenchGraph } from "@/components/home-french-graph/HomeFrenchGraph";
 import { HomeHeadline } from "@/components/home-headline/HomeHeadline";
 import { PageContent } from "@/components/page-content/PageContent";
@@ -30,6 +32,8 @@ export default function Home() {
       <PageContent>
         <PageContentCardsGridSection className="grid w-fit grid-cols-1 gap-8 p-8 lg:grid-cols-[repeat(2,448px)]">
           <LegislativesElectionCard />
+          <PresidentiellesElectionCard />
+          <MunicipalesElectionCard />
         </PageContentCardsGridSection>
       </PageContent>
     </>

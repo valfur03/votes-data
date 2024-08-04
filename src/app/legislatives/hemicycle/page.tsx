@@ -1,7 +1,7 @@
 import { DeputiesGrid } from "@/components/deputies-grid/DeputiesGrid";
 import { PageHeader } from "@/components/page-header/PageHeader";
 import { PageHeaderTitle } from "@/components/page-header/PageHeaderTitle";
-import { TAB_INITIAL_VALUE_SP_KEY } from "@/components/query-tabs/QueryTabs";
+import { TAB_INITIAL_VALUE_SP_KEY } from "@/components/query-tabs/shared/constants/tab-initial-value-sp-key";
 import { LEGISLATIVES_HEMICYCLE_PAGE_TITLE } from "@/constant/pages-title";
 import { TERM_0b5c63073d424f4c90cccc17ea29c4dd } from "@/data/legislatives/term/0b5c63073d424f4c90cccc17ea29c4dd";
 import { LegislativesHemicycleHeaderTabsSection } from "@/sections/legislatives/hemicycle/legislatives-hemicycle-header-tabs.section";

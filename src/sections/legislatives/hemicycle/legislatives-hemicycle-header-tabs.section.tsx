@@ -3,22 +3,27 @@ import { FrenchHemicycleSeats } from "@/components/french-hemicycle/FrenchHemicy
 import { HemicyclePieIcon } from "@/components/icon/HemicyclePie.icon";
 import { HemicycleSeatsIcon } from "@/components/icon/HemicycleSeats.icon";
 import { PageHeaderSection } from "@/components/page-header/PageHeaderSection";
-import {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
-} from "@/components/tabs/Tabs";
+import { QueryTabs } from "@/components/query-tabs/QueryTabs";
+import { TabsContent, TabsList, TabsTrigger } from "@/components/tabs/Tabs";
 import { TERM_0b5c63073d424f4c90cccc17ea29c4dd } from "@/data/legislatives/term/0b5c63073d424f4c90cccc17ea29c4dd";
 import {
   LEGISLATIVES_HEMICYCLE_PIE_TAB,
   LEGISLATIVES_HEMICYCLE_SEATS_TAB,
 } from "@/sections/legislatives/hemicycle/shared/constants/tabs";
+import { NextPageProps } from "@/types/next-page-props";
 
-export const LegislativesHemicycleHeaderTabsSection = () => {
+export type LegislativesHemicycleHeaderTabsSectionProps = {
+  tab: NextPageProps["searchParams"][number];
+};
+
+export const LegislativesHemicycleHeaderTabsSection = ({
+  tab,
+}: LegislativesHemicycleHeaderTabsSectionProps) => {
+  const selectedTab = Array.isArray(tab) ? tab[-1] : tab;
+
   return (
     // TODO change to LEGISLATIVES_HEMICYCLE_PIE_TAB
-    <Tabs defaultValue={LEGISLATIVES_HEMICYCLE_SEATS_TAB}>
+    <QueryTabs value={selectedTab || LEGISLATIVES_HEMICYCLE_SEATS_TAB}>
       <PageHeaderSection className="grid grid-cols-3 px-6">
         <TabsList className="col-start-3 ml-auto w-fit">
           <TabsTrigger value={LEGISLATIVES_HEMICYCLE_PIE_TAB} size={"icon"}>
@@ -37,6 +42,6 @@ export const LegislativesHemicycleHeaderTabsSection = () => {
           <FrenchHemicyclePie term={TERM_0b5c63073d424f4c90cccc17ea29c4dd} />
         </TabsContent>
       </PageHeaderSection>
-    </Tabs>
+    </QueryTabs>
   );
 };

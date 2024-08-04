@@ -23,24 +23,28 @@ export const LegislativesHemicycleHeaderTabsSection = ({
 
   return (
     // TODO change to LEGISLATIVES_HEMICYCLE_PIE_TAB
-    <QueryTabs value={selectedTab || LEGISLATIVES_HEMICYCLE_SEATS_TAB}>
-      <PageHeaderSection className="grid grid-cols-3 px-6">
-        <TabsList className="col-start-3 ml-auto w-fit">
-          <TabsTrigger value={LEGISLATIVES_HEMICYCLE_PIE_TAB} size={"icon"}>
-            <HemicyclePieIcon className="size-5" />
-          </TabsTrigger>
-          <TabsTrigger value={LEGISLATIVES_HEMICYCLE_SEATS_TAB} size={"icon"}>
-            <HemicycleSeatsIcon className="size-5" />
-          </TabsTrigger>
-        </TabsList>
-      </PageHeaderSection>
-      <PageHeaderSection className="m-auto max-w-screen-lg p-2">
-        <TabsContent value={LEGISLATIVES_HEMICYCLE_SEATS_TAB}>
-          <FrenchHemicycleSeats term={TERM_0b5c63073d424f4c90cccc17ea29c4dd} />
-        </TabsContent>
-        <TabsContent value={LEGISLATIVES_HEMICYCLE_PIE_TAB}>
-          <FrenchHemicyclePie term={TERM_0b5c63073d424f4c90cccc17ea29c4dd} />
-        </TabsContent>
+    <QueryTabs value={selectedTab || LEGISLATIVES_HEMICYCLE_SEATS_TAB} asChild>
+      <PageHeaderSection>
+        <div className="grid grid-cols-3 px-6">
+          <TabsList className="col-start-3 ml-auto w-fit">
+            <TabsTrigger value={LEGISLATIVES_HEMICYCLE_PIE_TAB} size={"icon"}>
+              <HemicyclePieIcon className="size-5" />
+            </TabsTrigger>
+            <TabsTrigger value={LEGISLATIVES_HEMICYCLE_SEATS_TAB} size={"icon"}>
+              <HemicycleSeatsIcon className="size-5" />
+            </TabsTrigger>
+          </TabsList>
+        </div>
+        <div className="m-auto max-w-screen-lg p-2">
+          <TabsContent value={LEGISLATIVES_HEMICYCLE_SEATS_TAB}>
+            <FrenchHemicycleSeats
+              term={TERM_0b5c63073d424f4c90cccc17ea29c4dd}
+            />
+          </TabsContent>
+          <TabsContent value={LEGISLATIVES_HEMICYCLE_PIE_TAB}>
+            <FrenchHemicyclePie term={TERM_0b5c63073d424f4c90cccc17ea29c4dd} />
+          </TabsContent>
+        </div>
       </PageHeaderSection>
     </QueryTabs>
   );

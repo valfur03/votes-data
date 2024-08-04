@@ -15,12 +15,15 @@ import { cn } from "@/lib/utils/cn";
 import { Term } from "@/types/term";
 import { useMemo, useState } from "react";
 
-export type FrenchHemicycleProps = {
+export type FrenchHemicycleSeatsProps = {
   className?: string;
   term: Term;
 };
 
-export const FrenchHemicycle = ({ className, term }: FrenchHemicycleProps) => {
+export const FrenchHemicycleSeats = ({
+  className,
+  term,
+}: FrenchHemicycleSeatsProps) => {
   const initialSeatPositions = useMemo(
     () =>
       withTermMandates(

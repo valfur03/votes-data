@@ -1,5 +1,5 @@
 import { FrenchHemicyclePie } from "@/components/french-hemicycle-pie/FrenchHemicyclePie";
-import { FrenchHemicycle } from "@/components/french-hemicycle/FrenchHemicycle";
+import { FrenchHemicycleSeats } from "@/components/french-hemicycle/FrenchHemicycleSeats";
 import { HemicyclePieIcon } from "@/components/icon/HemicyclePie.icon";
 import { HemicycleSeatsIcon } from "@/components/icon/HemicycleSeats.icon";
 import { PageHeaderSection } from "@/components/page-header/PageHeaderSection";
@@ -31,7 +31,7 @@ export const LegislativesHemicycleHeaderTabsSection = () => {
       </PageHeaderSection>
       <PageHeaderSection className="m-auto max-w-screen-lg p-2">
         <TabsContent value={LEGISLATIVES_HEMICYCLE_SEATS_TAB}>
-          <FrenchHemicycle term={TERM_0b5c63073d424f4c90cccc17ea29c4dd} />
+          <FrenchHemicycleSeats term={TERM_0b5c63073d424f4c90cccc17ea29c4dd} />
         </TabsContent>
         <TabsContent value={LEGISLATIVES_HEMICYCLE_PIE_TAB}>
           <FrenchHemicyclePie term={TERM_0b5c63073d424f4c90cccc17ea29c4dd} />

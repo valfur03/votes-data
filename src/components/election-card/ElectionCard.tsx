@@ -13,7 +13,14 @@ const ElectionCard = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
-  <Card ref={ref} className={cn("min-h-64", className)} {...props} />
+  <Card
+    ref={ref}
+    className={cn(
+      "min-h-64 max-w-xl bg-contain bg-right-top bg-no-repeat",
+      className,
+    )}
+    {...props}
+  />
 ));
 ElectionCard.displayName = "ElectionCard";
 
@@ -45,7 +52,11 @@ const ElectionCardContent = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
-  <CardContent ref={ref} className={cn("p-6 pt-0", className)} {...props} />
+  <CardContent
+    ref={ref}
+    className={cn("p-6 pt-0 max-w-[75%]", className)}
+    {...props}
+  />
 ));
 ElectionCardContent.displayName = "ElectionCardContent";
 

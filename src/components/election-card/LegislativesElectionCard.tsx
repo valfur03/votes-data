@@ -13,18 +13,16 @@ import Link from "next/link";
 export const LegislativesElectionCard = () => {
   return (
     <Link href={LEGISLATIVES_PATH}>
-      <ElectionCard className="bg-election-card-legislatives max-w-xl bg-contain bg-right-top bg-no-repeat">
-        <div className="max-w-[75%]">
-          <ElectionCardHeader>
-            <ElectionCardTitle>{LEGISLATIVES_PAGE_TITLE}</ElectionCardTitle>
-          </ElectionCardHeader>
-          <ElectionCardContent>
-            <p>
-              Consultez la composition de l’Assemblée Nationale, ainsi que les
-              statistiques des différents scrutins.
-            </p>
-          </ElectionCardContent>
-        </div>
+      <ElectionCard className="bg-election-card-legislatives">
+        <ElectionCardHeader>
+          <ElectionCardTitle>{LEGISLATIVES_PAGE_TITLE}</ElectionCardTitle>
+        </ElectionCardHeader>
+        <ElectionCardContent>
+          <p>
+            Consultez la composition de l’Assemblée Nationale, ainsi que les
+            statistiques des différents scrutins.
+          </p>
+        </ElectionCardContent>
         <ElectionCardFooter>
           <ArrowRightIcon className="size-6" />
         </ElectionCardFooter>

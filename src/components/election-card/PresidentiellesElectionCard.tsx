@@ -13,7 +13,7 @@ import Link from "next/link";
 export const PresidentiellesElectionCard = () => {
   return (
     <Link href={PRESIDENTIELLES_PATH}>
-      <ElectionCard className="bg-election-card-presidentielles ">
+      <ElectionCard className="bg-election-card-presidentielles bg-right-bottom">
         <ElectionCardHeader>
           <ElectionCardTitle>{PRESIDENTIELLES_PAGE_TITLE}</ElectionCardTitle>
         </ElectionCardHeader>

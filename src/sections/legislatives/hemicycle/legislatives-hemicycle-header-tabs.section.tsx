@@ -18,7 +18,7 @@ export const LegislativesHemicycleHeaderTabsSection = () => {
   return (
     // TODO change to LEGISLATIVES_HEMICYCLE_PIE_TAB
     <Tabs defaultValue={LEGISLATIVES_HEMICYCLE_SEATS_TAB}>
-      <PageHeaderSection className="grid grid-cols-3">
+      <PageHeaderSection className="grid grid-cols-3 px-6">
         <TabsList className="col-start-3 ml-auto w-fit">
           <TabsTrigger value={LEGISLATIVES_HEMICYCLE_PIE_TAB} size={"icon"}>
             <HemicyclePieIcon className="size-5" />

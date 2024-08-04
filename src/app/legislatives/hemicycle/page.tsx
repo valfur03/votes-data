@@ -1,5 +1,7 @@
 import { DeputiesGrid } from "@/components/deputies-grid/DeputiesGrid";
+import { LegislativesElectionGroupsScoresGrid } from "@/components/legislatives-election-group-score/LegislativesElectionGroupsScoresGrid";
 import { PageHeader } from "@/components/page-header/PageHeader";
+import { PageHeaderSection } from "@/components/page-header/PageHeaderSection";
 import { PageHeaderTitle } from "@/components/page-header/PageHeaderTitle";
 import { TAB_INITIAL_VALUE_SP_KEY } from "@/components/query-tabs/shared/constants/tab-initial-value-sp-key";
 import { LEGISLATIVES_HEMICYCLE_PAGE_TITLE } from "@/constant/pages-title";
@@ -17,6 +19,11 @@ export default function LegislativesHemicyclePage({
       <PageHeader>
         <PageHeaderTitle>{LEGISLATIVES_HEMICYCLE_PAGE_TITLE}</PageHeaderTitle>
         <LegislativesHemicycleHeaderTabsSection tab={tab} />
+        <PageHeaderSection className="px-2 py-8">
+          <LegislativesElectionGroupsScoresGrid
+            term={TERM_0b5c63073d424f4c90cccc17ea29c4dd}
+          />
+        </PageHeaderSection>
       </PageHeader>
       <section className="px-safe">
         <div className="m-auto max-w-screen-lg px-6 py-8">

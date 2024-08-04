@@ -1,3 +1,15 @@
+import { GROUP_0dabc0e7c5b0427b9cfe2de45a53b73e } from "@/data/legislatives/group/0dabc0e7c5b0427b9cfe2de45a53b73e";
+import { GROUP_2b82d7684c8f4e9ba1601bd55935af2e } from "@/data/legislatives/group/2b82d7684c8f4e9ba1601bd55935af2e";
+import { GROUP_4fa4a806d5e24c1e863b432f8b9800a3 } from "@/data/legislatives/group/4fa4a806d5e24c1e863b432f8b9800a3";
+import { GROUP_6995a0be3ff24c50add73db4b4211c80 } from "@/data/legislatives/group/6995a0be3ff24c50add73db4b4211c80";
+import { GROUP_823e10390bcc43808608c105d485db31 } from "@/data/legislatives/group/823e10390bcc43808608c105d485db31";
+import { GROUP_872c0097e8eb4f139c61d7db1e83d825 } from "@/data/legislatives/group/872c0097e8eb4f139c61d7db1e83d825";
+import { GROUP_9ae774bd948b4555817799a25fd66889 } from "@/data/legislatives/group/9ae774bd948b4555817799a25fd66889";
+import { GROUP_9ecb4ec8a6c34140b8e97d4492978592 } from "@/data/legislatives/group/9ecb4ec8a6c34140b8e97d4492978592";
+import { GROUP_abd8d9c174224f74ac1aeb7b3d02aa90 } from "@/data/legislatives/group/abd8d9c174224f74ac1aeb7b3d02aa90";
+import { GROUP_b0847fdad90540e58b30df3df9cde258 } from "@/data/legislatives/group/b0847fdad90540e58b30df3df9cde258";
+import { GROUP_dc389d8950bb4daea53d613c64515644 } from "@/data/legislatives/group/dc389d8950bb4daea53d613c64515644";
+import { GROUP_e92f37c1a91d411fade2785de4d19a8e } from "@/data/legislatives/group/e92f37c1a91d411fade2785de4d19a8e";
 import { MANDATE_003b8cccfd7a4371b57b88f678c76c92 } from "@/data/legislatives/mandate/003b8cccfd7a4371b57b88f678c76c92";
 import { MANDATE_0080195b69be44379b32e4978ac0bf5d } from "@/data/legislatives/mandate/0080195b69be44379b32e4978ac0bf5d";
 import { MANDATE_0081131e40bf453db530542950d70d93 } from "@/data/legislatives/mandate/0081131e40bf453db530542950d70d93";
@@ -1157,5 +1169,19 @@ export const TERM_0b5c63073d424f4c90cccc17ea29c4dd: Term = {
     MANDATE_328e798413fd499ca7ff79b32975b9b1,
     MANDATE_f9fc4bbabfdc43d089f87cdd0fa7f470,
     MANDATE_24098faafd3e48f6b7cc3d6fb23de1ba,
+  ],
+  groups: [
+    GROUP_9ae774bd948b4555817799a25fd66889,
+    GROUP_2b82d7684c8f4e9ba1601bd55935af2e,
+    GROUP_9ecb4ec8a6c34140b8e97d4492978592,
+    GROUP_0dabc0e7c5b0427b9cfe2de45a53b73e,
+    GROUP_b0847fdad90540e58b30df3df9cde258,
+    GROUP_abd8d9c174224f74ac1aeb7b3d02aa90,
+    GROUP_dc389d8950bb4daea53d613c64515644,
+    GROUP_823e10390bcc43808608c105d485db31,
+    GROUP_872c0097e8eb4f139c61d7db1e83d825,
+    GROUP_e92f37c1a91d411fade2785de4d19a8e,
+    GROUP_6995a0be3ff24c50add73db4b4211c80,
+    GROUP_4fa4a806d5e24c1e863b432f8b9800a3,
   ],
 };

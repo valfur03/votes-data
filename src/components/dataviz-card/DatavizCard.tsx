@@ -29,7 +29,7 @@ const DatavizCardHeader = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
-  <CardHeader ref={ref} className={cn("max-w-[75%]", className)} {...props} />
+  <CardHeader ref={ref} className={cn("", className)} {...props} />
 ));
 DatavizCardHeader.displayName = "DatavizCardHeader";
 

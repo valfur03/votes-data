@@ -17,6 +17,14 @@ const DatavizCard = React.forwardRef<
 ));
 DatavizCard.displayName = "DatavizCard";
 
+export const DatavizCardBanner = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div ref={ref} className={cn("", className)} {...props} />
+));
+DatavizCardBanner.displayName = "DatavizCardBanner";
+
 const DatavizCardHeader = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>

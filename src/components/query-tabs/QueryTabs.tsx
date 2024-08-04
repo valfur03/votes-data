@@ -23,7 +23,7 @@ export const QueryTabs = ({
     const updatedSearchParams = new URLSearchParams(searchParams);
     updatedSearchParams.set(TAB_INITIAL_VALUE_SP_KEY, value);
 
-    router.push(`${pathname}?${updatedSearchParams}`);
+    router.push(`${pathname}?${updatedSearchParams}`, { scroll: false });
 
     return onValueChange?.(value);
   };

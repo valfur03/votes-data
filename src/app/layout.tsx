@@ -1,6 +1,8 @@
 import { overpass } from "@/app/fonts/overpass/overpass";
 import { RootProviders } from "@/app/RootProviders";
+import { Footer } from "@/components/footer/Footer";
 import { Topbar } from "@/components/topbar/Topbar";
+import { cn } from "@/lib/utils/cn";
 import dayjs from "dayjs";
 import "dayjs/locale/fr";
 import type { Metadata, Viewport } from "next";
@@ -25,10 +27,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
-      <body className={overpass.className}>
+      <body className={cn("min-h-screen flex flex-col", overpass.className)}>
         <RootProviders>
           <Topbar />
           {children}
+          <Footer />
         </RootProviders>
       </body>
     </html>

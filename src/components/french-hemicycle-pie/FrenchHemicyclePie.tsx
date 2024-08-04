@@ -1,4 +1,5 @@
 import { FrenchHemicyclePiePaths } from "@/components/french-hemicycle-pie/shared/components/FrenchHemicyclePiePaths";
+import { calculateGroupParts } from "@/lib/utils/calculate-group-parts";
 import { cn } from "@/lib/utils/cn";
 import { Term } from "@/types/term";
 
@@ -15,17 +16,7 @@ export const FrenchHemicyclePie = ({
   vbHeight = 139,
   vbWidth = 237,
 }: FrenchHemicyclePieProps) => {
-  const groupParts = term.mandates.reduce<Record<string, number>>(
-    (acc, mandate) => {
-      const groupId = mandate.group.id;
-
-      return {
-        ...acc,
-        [groupId]: acc[groupId] !== undefined ? acc[groupId] + 1 : 0,
-      };
-    },
-    {},
-  );
+  const groupParts = calculateGroupParts(term.mandates);
 
   const orderedGroupParts = term.groups.map((group) => {
     return {

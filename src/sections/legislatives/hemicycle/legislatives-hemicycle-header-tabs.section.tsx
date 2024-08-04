@@ -22,8 +22,7 @@ export const LegislativesHemicycleHeaderTabsSection = ({
   const selectedTab = Array.isArray(tab) ? tab[-1] : tab;
 
   return (
-    // TODO change to LEGISLATIVES_HEMICYCLE_PIE_TAB
-    <QueryTabs value={selectedTab || LEGISLATIVES_HEMICYCLE_SEATS_TAB} asChild>
+    <QueryTabs value={selectedTab || LEGISLATIVES_HEMICYCLE_PIE_TAB} asChild>
       <PageHeaderSection>
         <div className="grid grid-cols-3 px-6">
           <TabsList className="col-start-3 ml-auto w-fit">

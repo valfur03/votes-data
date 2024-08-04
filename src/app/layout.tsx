@@ -1,4 +1,5 @@
 import { overpass } from "@/app/fonts/overpass/overpass";
+import { RootProviders } from "@/app/RootProviders";
 import { Topbar } from "@/components/topbar/Topbar";
 import dayjs from "dayjs";
 import "dayjs/locale/fr";
@@ -25,8 +26,10 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body className={overpass.className}>
-        <Topbar />
-        {children}
+        <RootProviders>
+          <Topbar />
+          {children}
+        </RootProviders>
       </body>
     </html>
   );

@@ -15,6 +15,10 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         "national-assembly-blue":
           "url(/assets/image/other/election-card/national-assembly-blue.png)",
+        "president-blue":
+          "url(/assets/image/other/election-card/president-blue.png)",
+        "town-hall-blue":
+          "url(/assets/image/other/election-card/town-hall-blue.png)",
       },
       colors: {
         "blue-france": "#000091",

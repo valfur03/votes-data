@@ -54,6 +54,14 @@ body {
   .bg-election-card-legislatives {
     @apply bg-white bg-national-assembly-blue;
   }
+
+  .bg-election-card-presidentielles {
+    @apply bg-white bg-president-blue;
+  }
+
+  .bg-election-card-municipales {
+    @apply bg-white bg-town-hall-blue;
+  }
 }
 
 @layer utilities {

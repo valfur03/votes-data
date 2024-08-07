@@ -2,13 +2,13 @@ import { Button } from "@/components/button/Button";
 import { LegislativesElectionCard } from "@/components/election-card/LegislativesElectionCard";
 import { MunicipalesElectionCard } from "@/components/election-card/MunicipalesElectionCard";
 import { PresidentiellesElectionCard } from "@/components/election-card/PresidentiellesElectionCard";
+import { GlobalSearchDataButton } from "@/components/global-search-data-button/GlobalSearchDataButton";
 import { HomeFrenchGraph } from "@/components/home-french-graph/HomeFrenchGraph";
 import { HomeHeadline } from "@/components/home-headline/HomeHeadline";
 import { PageContent } from "@/components/page-content/PageContent";
 import { PageContentCardsGridSection } from "@/components/page-content/PageContentCardsGridSection";
 import { PageHeader } from "@/components/page-header/PageHeader";
 import { PageHeaderSection } from "@/components/page-header/PageHeaderSection";
-import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
 
 export default function Home() {
   return (
@@ -20,9 +20,7 @@ export default function Home() {
               <HomeHeadline className="text-center md:text-left" />
               <div className="flex justify-center gap-x-3 md:justify-start">
                 <Button>Découvrir</Button>
-                <Button variant="primary-discret">
-                  <MagnifyingGlassIcon /> Rechercher une donnée...
-                </Button>
+                <GlobalSearchDataButton />
               </div>
             </div>
             <HomeFrenchGraph className="hidden md:flex" />

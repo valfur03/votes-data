@@ -1,22 +1,20 @@
 import { Button } from "@/components/button/Button";
-import {
-  PageContent,
-  PageContentProps,
-} from "@/components/page-content/PageContent";
 import { PageHeaderSection } from "@/components/page-header/PageHeaderSection";
 import { ArrowLeftIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
+import { PropsWithChildren } from "react";
 
-export type PageHeaderProps = PageContentProps & {
+export type PageHeaderProps = PropsWithChildren<{
+  className?: string;
   hasReturnButton?: boolean;
-};
+}>;
 
 export const PageHeader = ({
   children,
   hasReturnButton = true,
 }: PageHeaderProps) => {
   return (
-    <PageContent className="page-header flex flex-col [&>*]:order-1">
+    <header className="page-header flex flex-col [&>*]:order-1">
       {hasReturnButton && (
         <PageHeaderSection
           sectionClassName="order-1"
@@ -31,6 +29,6 @@ export const PageHeader = ({
         </PageHeaderSection>
       )}
       {children}
-    </PageContent>
+    </header>
   );
 };

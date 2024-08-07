@@ -8,9 +8,9 @@ export const HomeHeadline = ({ className }: HomeHeadlineProps) => {
   const highlightSpanClassName = "text-blue-france";
 
   return (
-    <p
+    <h1
       className={cn(
-        "w-full max-w-[420px] text-4xl font-extrabold text-neutral-800",
+        "w-full tracking-normal max-w-[420px] lg:text-4xl text-neutral-800",
         className,
       )}
     >
@@ -18,6 +18,6 @@ export const HomeHeadline = ({ className }: HomeHeadlineProps) => {
       <span className={highlightSpanClassName}>élections</span> en France, de
       manière <span className={highlightSpanClassName}>claire</span> et{" "}
       <span className={highlightSpanClassName}>transparente</span>
-    </p>
+    </h1>
   );
 };

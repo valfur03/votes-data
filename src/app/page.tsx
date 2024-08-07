@@ -1,4 +1,4 @@
-import { Button } from "@/components/button/Button";
+import { DiscoverDataButton } from "@/components/discover-data-button/DiscoverDataButton";
 import { LegislativesElectionCard } from "@/components/election-card/LegislativesElectionCard";
 import { MunicipalesElectionCard } from "@/components/election-card/MunicipalesElectionCard";
 import { PresidentiellesElectionCard } from "@/components/election-card/PresidentiellesElectionCard";
@@ -19,7 +19,7 @@ export default function Home() {
             <div className="flex flex-col gap-y-4">
               <HomeHeadline className="text-center md:text-left" />
               <div className="flex justify-center gap-x-3 md:justify-start">
-                <Button>Découvrir</Button>
+                <DiscoverDataButton />
                 <GlobalSearchDataButton />
               </div>
             </div>

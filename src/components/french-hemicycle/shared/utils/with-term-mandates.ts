@@ -3,7 +3,7 @@ import { Mandate } from "@/types/mandate";
 
 export const withTermMandates = (
   seats: Array<SurroundedSeat>,
-  mandates: Array<Mandate>,
+  mandates: Array<Mandate | null>,
 ) => {
   return seats.map((seat, index) => {
     if (mandates[index] === undefined) {

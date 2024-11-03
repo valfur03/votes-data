@@ -9,9 +9,11 @@ export type DeputiesGridProps = {
 export const DeputiesGrid = ({ term }: DeputiesGridProps) => {
   return (
     <div className="grid grid-cols-1 px-4 md:grid-cols-2 md:px-12 lg:px-24">
-      {term.mandates.map((mandate) => (
-        <DeputiesGridCell mandate={mandate} key={mandate.id} />
-      ))}
+      {term.mandates.map((mandate) => {
+        if (mandate !== null) {
+          return <DeputiesGridCell mandate={mandate} key={mandate.id} />;
+        }
+      })}
     </div>
   );
 };

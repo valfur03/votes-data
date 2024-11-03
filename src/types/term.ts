@@ -3,6 +3,6 @@ import { Group } from "@/types/group";
 import { Mandate } from "@/types/mandate";
 
 export type Term = Entity<{
-  mandates: Array<Mandate>;
+  mandates: Array<Mandate | null>;
   groups: Array<Group>;
 }>;

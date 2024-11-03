@@ -77,24 +77,29 @@ export const FrenchHemicycleSeats = ({
       <HemicycleSeatsImagePatterns mandates={seatPositions} />
       <g fill="#9E9E9E">
         {seatPositions.map((seat, index) => {
-          return (
-            <HemicycleSeat
-              seat={seat}
-              fill={
-                hoveredSeatIndex === index
-                  ? `url(#seat-${seat.mandate.seatNumber}-img)`
-                  : seat.mandate.group.color
-              }
-              onMouseEnter={handleSeatHover(index, seat.surroundingSeatsIndex)}
-              onMouseLeave={resetInitialSeatPositions()}
-              onTouchStart={onTouchStart(
-                index,
-                handleSeatHover(index, seat.surroundingSeatsIndex),
-              )}
-              onTouchEnd={onTouchEnd(index)}
-              key={seat.mandate.id}
-            />
-          );
+          if (seat.mandate !== null) {
+            return (
+              <HemicycleSeat
+                seat={seat}
+                fill={
+                  hoveredSeatIndex === index
+                    ? `url(#seat-${seat.mandate.seatNumber}-img)`
+                    : seat.mandate.group.color
+                }
+                onMouseEnter={handleSeatHover(
+                  index,
+                  seat.surroundingSeatsIndex,
+                )}
+                onMouseLeave={resetInitialSeatPositions()}
+                onTouchStart={onTouchStart(
+                  index,
+                  handleSeatHover(index, seat.surroundingSeatsIndex),
+                )}
+                onTouchEnd={onTouchEnd(index)}
+                key={seat.mandate.id}
+              />
+            );
+          }
         })}
       </g>
     </svg>

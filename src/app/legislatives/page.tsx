@@ -3,8 +3,8 @@ import { PageHeader } from "@/components/page-header/PageHeader";
 import { PageHeaderTitle } from "@/components/page-header/PageHeaderTitle";
 import { LEGISLATIVES_PAGE_TITLE } from "@/constant/pages-title";
 import { DATAVIZ_PAGES } from "@/data/legislatives/dataviz/pages";
-import { ElectionTimelineSection } from "@/sections/legislatives/election-timeline.section";
-import { DatavizCardsSection } from "@/sections/shared/dataviz-cards/dataviz-cards.section";
+import { ElectionTimelineSection } from "@/sections/legislatives/ElectionTimeline.section";
+import { DatavizCardsSection } from "@/sections/shared/dataviz-cards/DatavizCards.section";
 
 export default function LegislativesPage() {
   return (

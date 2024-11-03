@@ -7,7 +7,7 @@ import {
   DatavizCardTitle,
 } from "@/components/dataviz-card/DatavizCard";
 import { PageContentCardsGridSection } from "@/components/page-content/PageContentCardsGridSection";
-import { EmptyDatavizCardsSection } from "@/sections/shared/dataviz-cards/empty-dataviz-cards.section";
+import { EmptyDatavizCardsSection } from "@/sections/shared/dataviz-cards/EmptyDatavizCards.section";
 import { DatavizCardLink } from "@/types/dataviz-card-link";
 import { ArrowRightIcon } from "@radix-ui/react-icons";
 import Link from "next/link";

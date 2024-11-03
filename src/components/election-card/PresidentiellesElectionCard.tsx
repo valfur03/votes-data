@@ -19,8 +19,8 @@ export const PresidentiellesElectionCard = () => {
         </ElectionCardHeader>
         <ElectionCardContent>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
-            fringilla sapien quis erat feugiat, id aliquet augue iaculis.
+            Consultez l&apos;historique des présidents élus, ainsi que des
+            détails sur ces élections.
           </p>
         </ElectionCardContent>
         <ElectionCardFooter>

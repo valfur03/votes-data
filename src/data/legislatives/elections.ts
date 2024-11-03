@@ -1,6 +1,6 @@
-import { Election } from "@/types/election";
+import { ElectionsHistory } from "@/types/election";
 
-export const LEGISLATIVES_ELECTIONS: [Election, Election, ...Election[]] = [
+export const LEGISLATIVES_ELECTIONS: ElectionsHistory = [
   {
     firstRoundDate: new Date("2029-07-01"),
     secondRoundDate: new Date("2029-07-08"),

@@ -2,8 +2,9 @@ import { PageContent } from "@/components/page-content/PageContent";
 import { PageHeader } from "@/components/page-header/PageHeader";
 import { PageHeaderTitle } from "@/components/page-header/PageHeaderTitle";
 import { LEGISLATIVES_PAGE_TITLE } from "@/constant/pages-title";
-import { DatavizCardsSection } from "@/sections/legislatives/dataviz-cards.section";
+import { DATAVIZ_PAGES } from "@/data/legislatives/dataviz/pages";
 import { ElectionTimelineSection } from "@/sections/legislatives/election-timeline.section";
+import { DatavizCardsSection } from "@/sections/shared/dataviz-cards/dataviz-cards.section";
 
 export default function LegislativesPage() {
   return (
@@ -13,7 +14,7 @@ export default function LegislativesPage() {
         <ElectionTimelineSection />
       </PageHeader>
       <PageContent>
-        <DatavizCardsSection />
+        <DatavizCardsSection pages={DATAVIZ_PAGES} />
       </PageContent>
     </>
   );

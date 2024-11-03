@@ -2,8 +2,8 @@ import { PageContent } from "@/components/page-content/PageContent";
 import { PageHeader } from "@/components/page-header/PageHeader";
 import { PageHeaderTitle } from "@/components/page-header/PageHeaderTitle";
 import { PRESIDENTIELLES_PAGE_TITLE } from "@/constant/pages-title";
-import { DatavizCardsSection } from "@/sections/presidentielles/dataviz-cards.section";
 import { ElectionTimelineSection } from "@/sections/presidentielles/election-timeline.section";
+import { EmptyDatavizCardsSection } from "@/sections/shared/dataviz-cards/empty-dataviz-cards.section";
 
 export default function PresidentiellesPage() {
   return (
@@ -13,7 +13,7 @@ export default function PresidentiellesPage() {
         <ElectionTimelineSection />
       </PageHeader>
       <PageContent>
-        <DatavizCardsSection />
+        <EmptyDatavizCardsSection />
       </PageContent>
     </>
   );

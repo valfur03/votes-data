@@ -19,8 +19,8 @@ export const MunicipalesElectionCard = () => {
         </ElectionCardHeader>
         <ElectionCardContent>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
-            fringilla sapien quis erat feugiat, id aliquet augue iaculis.
+            Découvrez les maires des villes de toute la France, et des données
+            approfondies à propos de leurs élections.
           </p>
         </ElectionCardContent>
         <ElectionCardFooter>

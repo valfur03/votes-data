@@ -7,7 +7,7 @@ export const MANDATE_bb3301c9d113417a94f72786b89e825d: Mandate = {
   id: "bb3301c9d113417a94f72786b89e825d",
   type: EMandateType.DEPUTY,
   politician: POLITICIAN_9ae2deb3b9db49879e967558e7630659,
-  seatNumber: "287",
+  seatNumber: "455",
   district: DISTRICT_bd1aecbe40e541c0a6f635be459ad57a,
   group: GROUP_823e10390bcc43808608c105d485db31,
 };

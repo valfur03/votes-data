@@ -1,9 +1,15 @@
 import { ElectionTimelineStop } from "@/components/election-timeline/shared/components/ElectionTimelineStop";
-import { LEGISLATIVES_ELECTIONS } from "@/data/legislatives/elections";
+import { Election } from "@/types/election";
 
-export const ElectionTimeline = () => {
-  const [nextElection, previousElection] = LEGISLATIVES_ELECTIONS;
+export type ElectionTimelineProps = {
+  nextElection: Election;
+  previousElection: Election;
+};
 
+export const ElectionTimeline = ({
+  nextElection,
+  previousElection,
+}: ElectionTimelineProps) => {
   return (
     <div className="election-timeline relative w-full max-w-[--election-timeline-max-width]">
       <div className="relative z-10 flex flex-row items-end justify-between pl-[calc(var(--election-timeline-xs-spots-padding-x)+env(safe-area-inset-left))] pr-[--election-timeline-xs-spots-padding-x] sm:px-[--election-timeline-sm-spots-padding-x]">

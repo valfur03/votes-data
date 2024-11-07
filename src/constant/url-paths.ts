@@ -4,6 +4,7 @@ export const REPORT_ISSUE_PATH = "#";
 
 export const LEGISLATIVES_PATH = "/legislatives";
 export const LEGISLATIVES_HEMICYCLE_PATH = "/legislatives/hemicycle";
+export const LEGISLATIVES_PARTICIPATION_PATH = "/legislatives/participation";
 
 export const PRESIDENTIELLES_PATH = "/presidentielles";
 

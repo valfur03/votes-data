@@ -1,0 +1,2 @@
+- replace all departmentName with department entity
+- add all districts in a district file

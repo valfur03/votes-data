@@ -1,6 +1,7 @@
+import { Department } from "@/types/department";
 import { Entity } from "@/types/entity";
 
 export type District = Entity<{
   number: string;
-  departmentName: string;
+  department: Department | null;
 }>;

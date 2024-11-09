@@ -1,4 +1,5 @@
 import { getPoliticianImagePath } from "@/lib/utils/get-politician-image-path";
+import { getDepartmentNameFromDistrict } from "@/lib/utils/legislatives/district/get-department-name-from-district";
 import { Mandate } from "@/types/mandate";
 import Image from "next/image";
 import Link from "next/link";
@@ -36,7 +37,7 @@ export const DeputiesGridCell = ({ mandate }: DeputiesGridCellProps) => {
           </span>
         </p>
         <p className="text-sm leading-4 text-gray-700">
-          {mandate.district.departmentName} (circonscription n°
+          {getDepartmentNameFromDistrict(mandate.district)} (circonscription n°
           {mandate.district.number})
         </p>
       </div>

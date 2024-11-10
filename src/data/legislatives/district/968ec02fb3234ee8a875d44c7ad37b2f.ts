@@ -4,5 +4,5 @@ import { District } from "@/types/district";
 export const DISTRICT_968ec02fb3234ee8a875d44c7ad37b2f: District = {
   id: "968ec02fb3234ee8a875d44c7ad37b2f",
   number: "2",
-  department: DEPARTMENT_58feca579c2c3f4541a2d630aa669e20,
+  departments: [DEPARTMENT_58feca579c2c3f4541a2d630aa669e20],
 };

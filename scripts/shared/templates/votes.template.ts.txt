@@ -1,0 +1,25 @@
+{{#each votes}}
+import { DISTRICT_{{this.district.id}} } from "@/data/legislatives/district/{{this.district.id}}";
+{{#each this.candidates}}
+import { POLITICIAN_{{this.politician.id}} } from "@/data/politician/{{this.politician.id}}";
+{{/each}}
+{{/each}}
+
+export const VOTES_BY_DISTRICT = [
+{{#each votes}}
+  {
+    district: DISTRICT_{{this.district.id}},
+    totalRegistered: {{this.totalRegistered}},
+    blankVotesTotal: {{this.blankVotesTotal}},
+    nullVotesTotal: {{this.nullVotesTotal}},
+    candidates: [
+      {{#each this.candidates}}
+        {
+          politician: POLITICIAN_{{this.politician.id}},
+          votesTotal: {{this.votesTotal}},
+        },
+      {{/each}}
+    ],
+  },
+{{/each}}
+];

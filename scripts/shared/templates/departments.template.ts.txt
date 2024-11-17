@@ -1,0 +1,9 @@
+{{#each departments}}
+import { DEPARTMENT_{{this.id}} } from "@/data/department/{{this.id}}";
+{{/each}}
+
+export const DEPARTMENTS: Array<Department> = [
+{{#each departments}}
+  DEPARTMENT_{{this.id}},
+{{/each}}
+];

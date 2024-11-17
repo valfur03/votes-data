@@ -4,7 +4,7 @@ import { Entity } from "@/types/entity";
 export type District = Entity<{
   number: string;
   // TODO not null sometimes
-  departments: Department[];
+  departments: Array<Department>;
 }>;
 
 export type DistrictsGroupedByDepartments = Array<{

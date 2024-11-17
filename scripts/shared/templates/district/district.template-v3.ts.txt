@@ -1,0 +1,14 @@
+{{#each entity.departments}}
+import { DEPARTMENT_{{this.id}} } from "@/data/departments/{{this.id}}";
+{{/each}}
+import { District } from "@/types/district";
+
+export const DISTRICT_{{entity.id}}: District = {
+  id: "{{entity.id}}",
+  number: "{{entity.number}}",
+  departments: [
+{{#each entity.departments}}
+    DEPARTMENT_{{this.id}},
+{{/each}}
+  ],
+};

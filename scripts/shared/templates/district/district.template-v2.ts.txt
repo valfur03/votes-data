@@ -1,0 +1,14 @@
+{{#if entity.department}}
+import { DEPARTMENT_{{entity.department.id}} } from "@/data/departments/{{entity.department.id}}";
+{{/if}}
+import { District } from "@/types/district";
+
+export const DISTRICT_{{entity.id}}: District = {
+  id: "{{entity.id}}",
+  number: "{{entity.number}}",
+{{#if entity.department}}
+  department: DEPARTMENT_{{entity.department.id}},
+{{else}}
+  department: null,
+{{/if}}
+};

@@ -1,0 +1,7 @@
+import { Department } from "@/types/department";
+
+export const DEPARTMENT_{{entity.id}}: Department = {
+  id: "{{entity.id}}",
+  code: "{{entity.code}}",
+  name: "{{{entity.name}}}",
+};

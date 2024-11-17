@@ -1,5 +1,4 @@
 import { createWriteStream, WriteStream } from "node:fs";
-import { stat, readFile, writeFile } from "node:fs/promises";
 
 import { readFileOrCreate } from "../utils/read-file-or-create";
 

@@ -1,8 +1,9 @@
+import { cva, VariantProps } from "class-variance-authority";
+
 import { ElectionTimelineStopCard } from "@/components/election-timeline/shared/components/ElectionTimelineStopCard";
 import { ElectionTimelineStopCircle } from "@/components/election-timeline/shared/components/ElectionTimelineStopCircle";
 import { cn } from "@/lib/utils/cn";
 import { Election } from "@/types/election";
-import { cva, VariantProps } from "class-variance-authority";
 
 const electionDateVariants = cva("", {
   variants: {

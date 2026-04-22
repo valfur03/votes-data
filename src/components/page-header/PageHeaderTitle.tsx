@@ -1,5 +1,6 @@
-import { PageHeaderSection } from "@/components/page-header/PageHeaderSection";
 import { PropsWithChildren } from "react";
+
+import { PageHeaderSection } from "@/components/page-header/PageHeaderSection";
 
 export type PageHeaderTitleProps = PropsWithChildren;
 

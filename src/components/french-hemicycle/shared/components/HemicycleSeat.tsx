@@ -1,5 +1,6 @@
-import { Seat } from "@/components/french-hemicycle/shared/types/seat";
 import { MouseEventHandler, TouchEventHandler } from "react";
+
+import { Seat } from "@/components/french-hemicycle/shared/types/seat";
 
 export type HemicycleSeatProps = {
   seat: Seat;

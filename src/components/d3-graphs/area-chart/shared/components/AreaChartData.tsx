@@ -1,9 +1,10 @@
 "use client";
 
-import { AreaChartSingleData } from "@/components/d3-graphs/area-chart/AreaChart";
-import { useAreaChart } from "@/components/d3-graphs/area-chart/shared/hooks/use-area-chart";
 import * as d3 from "d3";
 import React from "react";
+
+import { AreaChartSingleData } from "@/components/d3-graphs/area-chart/AreaChart";
+import { useAreaChart } from "@/components/d3-graphs/area-chart/shared/hooks/use-area-chart";
 
 export const AreaChartData = () => {
   const areaChart = useAreaChart();

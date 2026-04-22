@@ -1,9 +1,10 @@
 "use client";
 
-import { cn } from "@/lib/utils/cn";
 import * as TabsPrimitive from "@radix-ui/react-tabs";
 import { cva, VariantProps } from "class-variance-authority";
 import * as React from "react";
+
+import { cn } from "@/lib/utils/cn";
 
 const Tabs = TabsPrimitive.Root;
 

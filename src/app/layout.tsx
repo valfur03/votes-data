@@ -1,11 +1,13 @@
+import dayjs from "dayjs";
+import type { Metadata, Viewport } from "next";
+
 import { overpass } from "@/app/fonts/overpass/overpass";
 import { RootProviders } from "@/app/RootProviders";
 import { Footer } from "@/components/footer/Footer";
 import { Topbar } from "@/components/topbar/Topbar";
-import { cn } from "@/lib/utils/cn";
-import dayjs from "dayjs";
 import "dayjs/locale/fr";
-import type { Metadata, Viewport } from "next";
+
+import { cn } from "@/lib/utils/cn";
 
 import "./globals.css";
 

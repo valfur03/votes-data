@@ -1,3 +1,6 @@
+import { ArrowRightIcon } from "@radix-ui/react-icons";
+import Link from "next/link";
+
 import {
   ElectionCard,
   ElectionCardContent,
@@ -7,8 +10,6 @@ import {
 } from "@/components/election-card/ElectionCard";
 import { PRESIDENTIELLES_PAGE_TITLE } from "@/constant/pages-title";
 import { PRESIDENTIELLES_PATH } from "@/constant/url-paths";
-import { ArrowRightIcon } from "@radix-ui/react-icons";
-import Link from "next/link";
 
 export const PresidentiellesElectionCard = () => {
   return (

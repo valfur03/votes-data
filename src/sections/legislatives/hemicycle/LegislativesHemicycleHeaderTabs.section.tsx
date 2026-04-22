@@ -13,7 +13,7 @@ import {
 import { NextPageProps } from "@/types/next-page-props";
 
 export type LegislativesHemicycleHeaderTabsSectionProps = {
-  tab: NextPageProps["searchParams"][number];
+  tab: Awaited<NextPageProps["searchParams"]>[string];
 };
 
 export const LegislativesHemicycleHeaderTabsSection = ({

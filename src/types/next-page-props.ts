@@ -1,4 +1,4 @@
 export type NextPageProps = {
-  params: Record<string, string>;
-  searchParams: Record<string, string | Array<string> | undefined>;
+  params: Promise<Record<string, string>>;
+  searchParams: Promise<Record<string, string | Array<string> | undefined>>;
 };

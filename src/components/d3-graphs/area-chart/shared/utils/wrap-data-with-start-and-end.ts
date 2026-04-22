@@ -1,5 +1,6 @@
-import { AreaChartData } from "@/components/d3-graphs/area-chart/AreaChart";
 import * as d3 from "d3";
+
+import { AreaChartData } from "@/components/d3-graphs/area-chart/AreaChart";
 
 export type wrapDataWithStartAndEndOptions = {
   yOffset?: number;

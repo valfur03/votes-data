@@ -1,5 +1,6 @@
-import { IconProps } from "@/components/icon/shared/types/icon-props";
 import React from "react";
+
+import { IconProps } from "@/components/icon/shared/types/icon-props";
 
 export const HemicyclePieIcon = React.forwardRef<SVGSVGElement, IconProps>(
   ({ className, color = "currentColor" }, ref) => (

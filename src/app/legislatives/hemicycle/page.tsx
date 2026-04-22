@@ -10,10 +10,10 @@ import { TERM_0b5c63073d424f4c90cccc17ea29c4dd } from "@/data/legislatives/term/
 import { LegislativesHemicycleHeaderTabsSection } from "@/sections/legislatives/hemicycle/LegislativesHemicycleHeaderTabs.section";
 import { NextPageProps } from "@/types/next-page-props";
 
-export default function LegislativesHemicyclePage({
+export default async function LegislativesHemicyclePage({
   searchParams,
 }: NextPageProps) {
-  const tab = searchParams[TAB_INITIAL_VALUE_SP_KEY];
+  const tab = (await searchParams)[TAB_INITIAL_VALUE_SP_KEY];
 
   return (
     <main>

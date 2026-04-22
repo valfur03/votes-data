@@ -1,13 +1,14 @@
 "use client";
 
+import * as d3 from "d3";
+import { PropsWithChildren } from "react";
+
 import { AreaChartData } from "@/components/d3-graphs/area-chart/AreaChart";
 import {
   AreaChartContext,
   AreaChartContextType,
 } from "@/components/d3-graphs/area-chart/shared/contexts/area-chart.context";
 import { getXYExtentsFromData } from "@/components/d3-graphs/area-chart/shared/utils/get-x-y-extents-from-data";
-import * as d3 from "d3";
-import { PropsWithChildren } from "react";
 
 export type AreaChartProviderProps = PropsWithChildren<{
   data: AreaChartData;

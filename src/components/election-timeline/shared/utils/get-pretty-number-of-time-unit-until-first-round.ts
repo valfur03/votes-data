@@ -1,5 +1,6 @@
-import { Election } from "@/types/election";
 import dayjs, { Dayjs } from "dayjs";
+
+import { Election } from "@/types/election";
 
 export enum ETimeUnit {
   YEAR = "year",

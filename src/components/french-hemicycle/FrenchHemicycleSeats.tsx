@@ -1,5 +1,7 @@
 "use client";
 
+import { useMemo, useState } from "react";
+
 import { HemicycleSeat } from "@/components/french-hemicycle/shared/components/HemicycleSeat";
 import { HemicycleSeatsImagePatterns } from "@/components/french-hemicycle/shared/components/HemicycleSeatsImagePatterns";
 import {
@@ -13,7 +15,6 @@ import { withSurroundingSeats } from "@/components/french-hemicycle/shared/utils
 import { withTermMandates } from "@/components/french-hemicycle/shared/utils/with-term-mandates";
 import { cn } from "@/lib/utils/cn";
 import { Term } from "@/types/term";
-import { useMemo, useState } from "react";
 
 export type FrenchHemicycleSeatsProps = {
   className?: string;

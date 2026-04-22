@@ -1,7 +1,8 @@
 #!/usr/bin/env tsx
 
-import { POLITICIANS_IMAGES_EXTENSION } from "@/constant/images";
 import * as fs from "node:fs";
+
+import { POLITICIANS_IMAGES_EXTENSION } from "@/constant/images";
 
 import { SourceIndex } from "./shared/classes/source-index";
 import {

@@ -1,8 +1,9 @@
 "use client";
 
-import { AreaChartData } from "@/components/d3-graphs/area-chart/AreaChart";
 import { ScaleLinear } from "d3";
 import { createContext } from "react";
+
+import { AreaChartData } from "@/components/d3-graphs/area-chart/AreaChart";
 
 export type Extents = { min: number; max: number };
 

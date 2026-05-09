@@ -1,9 +1,10 @@
+import React from "react";
+
 import { AreaChartData } from "@/components/d3-graphs/area-chart/shared/components/AreaChartData";
 import { AreaChartHorizontalScales } from "@/components/d3-graphs/area-chart/shared/components/AreaChartHorizontalScales";
 import { AreaChartXAxis } from "@/components/d3-graphs/area-chart/shared/components/AreaChartXAxis";
 import { AreaChartProvider } from "@/components/d3-graphs/area-chart/shared/providers/AreaChartProvider";
 import { wrapDataWithStartAndEnd } from "@/components/d3-graphs/area-chart/shared/utils/wrap-data-with-start-and-end";
-import React from "react";
 
 export type AreaChartSingleData = {
   x: number;

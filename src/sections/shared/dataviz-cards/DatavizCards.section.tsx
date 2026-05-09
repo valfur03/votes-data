@@ -1,3 +1,6 @@
+import { ArrowRightIcon } from "@radix-ui/react-icons";
+import Link from "next/link";
+
 import {
   DatavizCard,
   DatavizCardBanner,
@@ -9,8 +12,6 @@ import {
 import { PageContentCardsGridSection } from "@/components/page-content/PageContentCardsGridSection";
 import { EmptyDatavizCardsSection } from "@/sections/shared/dataviz-cards/EmptyDatavizCards.section";
 import { DatavizCardLink } from "@/types/dataviz-card-link";
-import { ArrowRightIcon } from "@radix-ui/react-icons";
-import Link from "next/link";
 
 export type DatavizCardsSectionProps = {
   pages: Array<DatavizCardLink>;

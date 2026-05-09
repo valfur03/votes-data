@@ -1,5 +1,6 @@
-import { TooltipProvider } from "@/components/tooltip/Tooltip";
 import { PropsWithChildren } from "react";
+
+import { TooltipProvider } from "@/components/tooltip/Tooltip";
 
 export type RootProvidersProps = PropsWithChildren;
 

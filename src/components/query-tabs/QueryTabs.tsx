@@ -1,9 +1,10 @@
 "use client";
 
-import { TAB_INITIAL_VALUE_SP_KEY } from "@/components/query-tabs/shared/constants/tab-initial-value-sp-key";
-import { Tabs } from "@/components/tabs/Tabs";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import React, { PropsWithChildren } from "react";
+
+import { TAB_INITIAL_VALUE_SP_KEY } from "@/components/query-tabs/shared/constants/tab-initial-value-sp-key";
+import { Tabs } from "@/components/tabs/Tabs";
 
 export type QueryTabsProps = PropsWithChildren<
   React.ComponentPropsWithoutRef<typeof Tabs>

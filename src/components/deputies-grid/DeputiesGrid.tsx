@@ -1,6 +1,7 @@
+import React from "react";
+
 import { DeputiesGridCell } from "@/components/deputies-grid/shared/components/DeputiesGridCell";
 import { Term } from "@/types/term";
-import React from "react";
 
 export type DeputiesGridProps = {
   term: Term;

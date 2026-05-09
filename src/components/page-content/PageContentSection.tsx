@@ -1,5 +1,6 @@
-import { cn } from "@/lib/utils/cn";
 import { PropsWithChildren } from "react";
+
+import { cn } from "@/lib/utils/cn";
 
 export type PageContentSectionProps = PropsWithChildren<{
   className?: string;

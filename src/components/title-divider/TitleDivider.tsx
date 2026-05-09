@@ -1,5 +1,6 @@
-import { Divider } from "@/components/divider/Divider";
 import { PropsWithChildren } from "react";
+
+import { Divider } from "@/components/divider/Divider";
 
 export type TitleDividerPrpos = PropsWithChildren;
 

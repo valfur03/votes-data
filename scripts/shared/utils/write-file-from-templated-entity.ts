@@ -1,5 +1,6 @@
-import { Entity } from "@/types/entity";
 import fs from "node:fs";
+
+import { Entity } from "@/types/entity";
 
 export const writeFileFromTemplatedEntity = (
   outputDirectory: string,

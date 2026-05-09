@@ -1,5 +1,6 @@
-import { cn } from "@/lib/utils/cn";
 import { cva, VariantProps } from "class-variance-authority";
+
+import { cn } from "@/lib/utils/cn";
 
 const electionTimelineStopInnerCircleVariants = cva("", {
   variants: {

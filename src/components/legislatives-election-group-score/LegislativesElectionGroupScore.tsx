@@ -1,10 +1,11 @@
+import React from "react";
+
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
 } from "@/components/tooltip/Tooltip";
 import { cn } from "@/lib/utils/cn";
-import React from "react";
 
 export type LegislativeElectionGroupScoreProps = {
   color: string;

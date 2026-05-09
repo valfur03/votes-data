@@ -1,6 +1,7 @@
+import { PropsWithChildren } from "react";
+
 import { PageContentSection } from "@/components/page-content/PageContentSection";
 import { cn } from "@/lib/utils/cn";
-import { PropsWithChildren } from "react";
 
 export type PageContentCardsGridSectionProps = PropsWithChildren<{
   className?: string;

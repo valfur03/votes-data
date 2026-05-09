@@ -1,9 +1,10 @@
+import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
+
 import { Button, ButtonProps } from "@/components/button/Button";
 import {
   GLOBAL_SEARCH_DATA_BUTTON_DEFAULT_TEXT,
   GLOBALE_SEARCH_DATA_BUTTON_DEFAULT_VARIANT,
 } from "@/components/global-search-data-button/shared/constants/default";
-import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
 
 export type GlobalSearchDataButtonProps = {
   text?: string;

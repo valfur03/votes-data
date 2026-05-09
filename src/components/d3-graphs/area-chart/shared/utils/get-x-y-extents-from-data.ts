@@ -1,5 +1,6 @@
-import { AreaChartData } from "@/components/d3-graphs/area-chart/AreaChart";
 import * as d3 from "d3";
+
+import { AreaChartData } from "@/components/d3-graphs/area-chart/AreaChart";
 
 export const getXYExtentsFromData = (data: AreaChartData) => {
   const [xMin = 1, xMax = 1] = d3.extent(data, (d) => d.x);

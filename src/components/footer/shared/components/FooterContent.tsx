@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import {
   ABOUT_PAGE_TITLE,
   REPORT_ISSUE_PAGE_TITLE,
@@ -8,7 +10,6 @@ import {
   REPORT_ISSUE_PATH,
   SOURCE_CODE_PATH,
 } from "@/constant/url-paths";
-import Link from "next/link";
 
 export const FooterContent = () => {
   return (

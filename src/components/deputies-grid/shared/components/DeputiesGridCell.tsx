@@ -1,8 +1,9 @@
-import { getPoliticianImagePath } from "@/lib/utils/get-politician-image-path";
-import { Mandate } from "@/types/mandate";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+
+import { getPoliticianImagePath } from "@/lib/utils/get-politician-image-path";
+import { Mandate } from "@/types/mandate";
 
 export type DeputiesGridCellProps = {
   mandate: Mandate;

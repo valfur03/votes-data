@@ -27,7 +27,7 @@ export default async function LegislativesHemicyclePage({
         </PageHeaderSection>
       </PageHeader>
       <section className="px-safe">
-        <div className="m-auto max-w-screen-lg px-6 py-8">
+        <div className="m-auto max-w-(--breakpoint-lg) px-6 py-8">
           <TitleDivider>Liste des députés</TitleDivider>
           <DeputiesGrid term={TERM_0b5c63073d424f4c90cccc17ea29c4dd} />
         </div>

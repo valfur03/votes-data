@@ -15,11 +15,11 @@ export const PageHeader = ({
   hasReturnButton = true,
 }: PageHeaderProps) => {
   return (
-    <header className="page-header flex flex-col [&>*]:order-1">
+    <header className="page-header flex flex-col *:order-1">
       {hasReturnButton && (
         <PageHeaderSection
           sectionClassName="order-1"
-          className="max-w-screen-lg px-6 py-2"
+          className="max-w-(--breakpoint-lg) px-6 py-2"
         >
           <Button variant="link" asChild>
             <Link href=".">

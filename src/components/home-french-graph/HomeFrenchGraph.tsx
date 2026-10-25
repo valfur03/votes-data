@@ -8,7 +8,7 @@ export const HomeFrenchGraph = ({ className }: HomeFrenchGraphProps) => {
   return (
     <div
       className={cn(
-        "flex h-48 items-end gap-x-2.5 [&>div]:box-border [&>div]:w-12 [&>div]:rounded [&>div]:border-2",
+        "flex h-48 items-end gap-x-2.5 [&>div]:box-border [&>div]:w-12 [&>div]:rounded-sm [&>div]:border-2",
         className,
       )}
     >

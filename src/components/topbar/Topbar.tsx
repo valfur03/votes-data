@@ -5,8 +5,8 @@ import LogoTextImage from "../../../public/assets/image/logo/logo-text.png";
 
 export const Topbar = () => {
   return (
-    <div className="px-safe flex h-20 justify-center bg-white py-4">
-      <div className="flex size-full max-w-screen-lg items-center px-6">
+    <div className="flex h-20 justify-center bg-white py-4 px-safe">
+      <div className="flex size-full max-w-(--breakpoint-lg) items-center px-6">
         <Link href="/">
           <Image
             src={LogoTextImage}

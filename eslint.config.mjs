@@ -1,8 +1,8 @@
 import js from "@eslint/js";
 import nextCoreWebVitals from "eslint-config-next/core-web-vitals";
+import betterTailwindcss from "eslint-plugin-better-tailwindcss";
 import perfectionist from "eslint-plugin-perfectionist";
 import prettierRecommended from "eslint-plugin-prettier/recommended";
-import tailwindcss from "eslint-plugin-tailwindcss";
 import tseslint from "typescript-eslint";
 
 const config = [
@@ -10,7 +10,24 @@ const config = [
   js.configs.recommended,
   ...tseslint.configs.recommended,
   ...nextCoreWebVitals,
-  ...tailwindcss.configs["flat/recommended"],
+  {
+    ...betterTailwindcss.configs.recommended,
+    rules: {
+      ...betterTailwindcss.configs.recommended.rules,
+      "better-tailwindcss/enforce-consistent-line-wrapping": "off",
+      "better-tailwindcss/enforce-shorthand-classes": "warn",
+      "better-tailwindcss/no-unknown-classes": [
+        "error",
+        { ignore: ["^page-header$"] },
+      ],
+    },
+    settings: {
+      "better-tailwindcss": {
+        detectComponentClasses: true,
+        entryPoint: "src/app/globals.css",
+      },
+    },
+  },
   prettierRecommended,
   {
     plugins: { perfectionist },

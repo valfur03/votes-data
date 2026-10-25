@@ -25,9 +25,9 @@ export const ElectionTimelineStopCard = ({
   return time === "passed" ? (
     <p className="text-xs text-neutral-700">{prettifiedElectionDate}</p>
   ) : (
-    <Card className="w-[--election-timeline-card-next-width] gap-2">
+    <Card className="w-(--election-timeline-card-next-width) gap-2">
       <CardHeader className="pb-0">
-        <CardTitle className="whitespace-pre-line text-base font-semibold text-neutral-800">
+        <CardTitle className="text-base font-semibold whitespace-pre-line text-neutral-800">
           {prettifiedElectionDate}
         </CardTitle>
       </CardHeader>

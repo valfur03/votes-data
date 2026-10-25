@@ -31,7 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
-      <body className={cn("min-h-screen flex flex-col", overpass.className)}>
+      <body className={cn("flex min-h-screen flex-col", overpass.className)}>
         <RootProviders>
           <Topbar />
           {children}

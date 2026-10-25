@@ -34,7 +34,7 @@ export const LegislativesHemicycleHeaderTabsSection = ({
             </TabsTrigger>
           </TabsList>
         </div>
-        <div className="m-auto max-w-screen-lg p-2">
+        <div className="m-auto max-w-(--breakpoint-lg) p-2">
           <TabsContent value={LEGISLATIVES_HEMICYCLE_SEATS_TAB}>
             <FrenchHemicycleSeats
               term={TERM_0b5c63073d424f4c90cccc17ea29c4dd}

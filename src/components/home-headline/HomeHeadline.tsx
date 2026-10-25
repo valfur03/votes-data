@@ -10,7 +10,7 @@ export const HomeHeadline = ({ className }: HomeHeadlineProps) => {
   return (
     <h1
       className={cn(
-        "w-full tracking-normal max-w-[420px] lg:text-4xl text-neutral-800",
+        "w-full max-w-[420px] tracking-normal text-neutral-800 lg:text-4xl",
         className,
       )}
     >

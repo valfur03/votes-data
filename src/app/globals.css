@@ -1,18 +1,55 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-rgb: 238, 238, 238;
+@theme {
+  --background-image-gradient-radial: radial-gradient(var(--tw-gradient-stops));
+  --background-image-gradient-conic: conic-gradient(
+    from 180deg at 50% 50%,
+    var(--tw-gradient-stops)
+  );
+  --background-image-national-assembly-blue: url(/assets/image/other/election-card/national-assembly-blue.png);
+  --background-image-president-blue: url(/assets/image/other/election-card/president-blue.png);
+  --background-image-town-hall-blue: url(/assets/image/other/election-card/town-hall-blue.png);
+
+  --color-blue-france: #000091;
+
+  --default-ring-color: rgb(59 130 246 / 0.5);
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-rgb));
+@utility pt-safe {
+  padding-top: env(safe-area-inset-top);
+}
+
+@utility pr-safe {
+  padding-right: env(safe-area-inset-right);
+}
+
+@utility pb-safe {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+@utility pl-safe {
+  padding-left: env(safe-area-inset-left);
+}
+
+@utility px-safe {
+  @apply pl-safe pr-safe;
+}
+
+@utility py-safe {
+  @apply pt-safe pb-safe;
 }
 
 @layer base {
+  :root {
+    --foreground-rgb: 0, 0, 0;
+    --background-rgb: 238, 238, 238;
+  }
+
+  body {
+    color: rgb(var(--foreground-rgb));
+    background: rgb(var(--background-rgb));
+  }
+
   html {
     font-size: 14px;
 
@@ -28,13 +65,14 @@ body {
   h2 {
     @apply text-3xl font-semibold tracking-tight;
   }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
 }
 
 @layer components {
-  .page-header .before-return {
-    order: 0;
-  }
-
   .header-section {
     --header-section-max-width: 56rem;
     --header-section-padding-x: 2rem;
@@ -64,23 +102,8 @@ body {
   }
 }
 
-@layer utilities {
-  .pt-safe {
-    padding-top: env(safe-area-inset-top);
-  }
-  .pr-safe {
-    padding-right: env(safe-area-inset-right);
-  }
-  .pb-safe {
-    padding-bottom: env(safe-area-inset-bottom);
-  }
-  .pl-safe {
-    padding-left: env(safe-area-inset-left);
-  }
-  .px-safe {
-    @apply pl-safe pr-safe;
-  }
-  .py-safe {
-    @apply pl-safe pr-safe;
+@utility before-return {
+  .page-header & {
+    order: 0;
   }
 }

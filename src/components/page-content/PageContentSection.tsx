@@ -14,7 +14,9 @@ export const PageContentSection = ({
 }: PageContentSectionProps) => {
   return (
     <section className={cn("px-safe last:rounded-b-lg", sectionClassName)}>
-      <div className={cn("m-auto max-w-screen-lg", className)}>{children}</div>
+      <div className={cn("m-auto max-w-(--breakpoint-lg)", className)}>
+        {children}
+      </div>
     </section>
   );
 };

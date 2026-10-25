@@ -15,7 +15,7 @@ export default function Home() {
     <>
       <PageHeader hasReturnButton={false}>
         <PageHeaderSection className="flex p-8">
-          <div className="flex w-full justify-center bg-[length:832px] bg-no-repeat md:justify-between md:bg-[url(/assets/image/other/home-graph-lines.png)] md:px-8">
+          <div className="flex w-full justify-center bg-size-[832px] bg-no-repeat md:justify-between md:bg-[url(/assets/image/other/home-graph-lines.png)] md:px-8">
             <div className="flex flex-col gap-y-4">
               <HomeHeadline className="text-center md:text-left" />
               <div className="flex justify-center gap-x-3 md:justify-start">

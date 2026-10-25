@@ -49,7 +49,7 @@ export const LegislativesElectionGroupScore = ({
         >
           <span
             className={cn(
-              "min-w-12 rounded bg-[--party-color] px-2 py-1 text-center text-sm",
+              "min-w-12 rounded-sm bg-(--party-color) px-2 py-1 text-center text-sm",
               textColor,
             )}
           >

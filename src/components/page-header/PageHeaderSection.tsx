@@ -17,14 +17,14 @@ export const PageHeaderSection = ({
   return (
     <PageContentSection
       sectionClassName={cn(
-        "bg-white last:shadow-sm last:border-b border-neutral-300 last:rounded-b-lg",
+        "border-neutral-300 bg-white last:rounded-b-lg last:border-b last:shadow-xs",
         {
           "before-return": beforeReturn,
         },
         sectionClassName,
       )}
       className={cn(
-        "header-section max-w-[--header-section-max-width]",
+        "header-section max-w-(--header-section-max-width)",
         className,
       )}
     >

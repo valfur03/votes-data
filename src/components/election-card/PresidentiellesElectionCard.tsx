@@ -14,7 +14,7 @@ import { PRESIDENTIELLES_PATH } from "@/constant/url-paths";
 export const PresidentiellesElectionCard = () => {
   return (
     <Link href={PRESIDENTIELLES_PATH}>
-      <ElectionCard className="bg-election-card-presidentielles bg-right-bottom">
+      <ElectionCard className="bg-election-card-presidentielles bg-bottom-right">
         <ElectionCardHeader>
           <ElectionCardTitle>{PRESIDENTIELLES_PAGE_TITLE}</ElectionCardTitle>
         </ElectionCardHeader>

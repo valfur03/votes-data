@@ -8,7 +8,7 @@ export const PageHeaderTitle = ({ children }: PageHeaderTitleProps) => {
   return (
     <PageHeaderSection
       beforeReturn={true}
-      className="m-auto max-w-screen-lg p-6 pb-0"
+      className="m-auto max-w-(--breakpoint-lg) p-6 pb-0"
     >
       <h1>{children}</h1>
     </PageHeaderSection>

@@ -17,7 +17,7 @@ const ElectionCard = React.forwardRef<
   <Card
     ref={ref}
     className={cn(
-      "min-h-64 max-w-xl bg-contain bg-right-top bg-no-repeat",
+      "min-h-64 max-w-xl bg-contain bg-top-right bg-no-repeat",
       className,
     )}
     {...props}
@@ -55,7 +55,7 @@ const ElectionCardContent = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <CardContent
     ref={ref}
-    className={cn("p-6 pt-0 max-w-[75%]", className)}
+    className={cn("max-w-[75%] p-6 pt-0", className)}
     {...props}
   />
 ));
